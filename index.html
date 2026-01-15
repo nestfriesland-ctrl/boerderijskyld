@@ -1,18 +1,20 @@
-<html lang="nl" class="scroll-smooth"><head>
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKYLD - The Origin of Performance &amp; Care</title>
+    <title>SKYLD - The Origin of Performance & Care</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@200;300;400;500&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/2.0.0/iconify.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <style>
         /* Custom Font Bindings */
@@ -43,12 +45,6 @@
                 0 30px 60px -15px rgba(26, 54, 40, 0.15);
         }
 
-        /* Atmospheric Light Glow */
-        .glow-effect {
-            background: radial-gradient(circle at 50% 50%, rgba(252, 211, 77, 0.08) 0%, transparent 70%);
-            filter: blur(60px);
-        }
-
         /* Receipt Pattern */
         .receipt-jagged {
             background: linear-gradient(135deg, transparent 75%, #FDFBF7 75%) 0 50%,
@@ -60,16 +56,13 @@
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* Typography Refinement */
         h1, h2, h3 { letter-spacing: -0.03em; }
     </style>
 </head>
 <body class="bg-[#FDFBF7] text-[#1A3628] font-sans antialiased selection:bg-[#1A3628] selection:text-[#FDFBF7] relative">
 
-    <!-- Global Noise Texture Overlay -->
     <div class="fixed inset-0 pointer-events-none z-0 bg-noise opacity-60 mix-blend-multiply"></div>
 
-    <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 transition-all duration-500 backdrop-blur-xl bg-[#FDFBF7]/70 border-b border-[#1A3628]/5 supports-[backdrop-filter]:bg-[#FDFBF7]/60">
         <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
             <a href="#" class="relative group">
@@ -80,7 +73,7 @@
             <div class="hidden md:flex items-center space-x-12 text-xs font-medium uppercase tracking-[0.15em] text-[#1A3628]/60">
                 <a href="#filosofie" class="hover:text-[#1A3628] transition-colors duration-300">Filosofie</a>
                 <a href="#partners" class="hover:text-[#1A3628] transition-colors duration-300">Retail</a>
-                <a href="#specs" class="hover:text-[#1A3628] transition-colors duration-300">Science</a>
+                <a href="#specs" class="hover:text-[#1A3628] transition-colors duration-300">Inhoud</a>
             </div>
 
             <div class="flex items-center gap-6">
@@ -94,14 +87,11 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <header class="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden z-10">
-        <!-- Ambient Background Glows -->
         <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-b from-[#FFFBEB] to-transparent rounded-full blur-3xl opacity-60 -translate-y-1/2 translate-x-1/4"></div>
         
         <div class="max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-12 gap-12 lg:gap-20 items-center relative">
             
-            <!-- Text Content -->
             <div class="lg:col-span-7 order-2 lg:order-1 space-y-10">
                 <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/50 border border-[#1A3628]/10 backdrop-blur-sm shadow-sm">
                     <span class="w-1.5 h-1.5 rounded-full bg-[#1A3628] animate-pulse"></span>
@@ -131,27 +121,23 @@
                 </div>
             </div>
 
-            <!-- Visual Content -->
             <div class="lg:col-span-5 order-1 lg:order-2 flex justify-center lg:justify-end items-center relative">
-                <!-- Abstract Ring -->
                 <div class="absolute w-[500px] h-[500px] border border-[#1A3628]/5 rounded-full -z-10 animate-[spin_60s_linear_infinite]"></div>
                 <div class="absolute w-[400px] h-[400px] border border-[#1A3628]/5 rounded-full -z-10 animate-[spin_40s_linear_infinite_reverse]"></div>
                 
-                <!-- The Scoop -->
                 <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full cream-scoop animate-float flex items-center justify-center z-10">
                     <div class="absolute inset-0 rounded-full bg-white opacity-20 blur-xl"></div>
                     <span class="font-serif italic text-3xl text-[#1A3628]/10 select-none mix-blend-multiply">Voedzaam</span>
                 </div>
 
-                <!-- Floating Data Card -->
                 <div class="absolute -bottom-6 left-0 md:-left-12 bg-white/80 backdrop-blur-xl p-6 rounded-2xl border border-white/60 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.05)] z-20 animate-float" style="animation-delay: 2s;">
                     <div class="flex items-center gap-4">
                         <div class="w-10 h-10 rounded-full bg-[#F5F5F0] flex items-center justify-center text-[#1A3628]">
                             <span class="iconify" data-icon="lucide:activity" data-width="18"></span>
                         </div>
                         <div>
-                            <p class="font-serif text-2xl leading-none text-[#1A3628]">Power 5</p>
-                            <p class="text-[10px] text-[#1A3628]/50 uppercase tracking-[0.15em] mt-1">HMB &amp; Creatine Matrix</p>
+                            <p class="font-serif text-2xl leading-none text-[#1A3628]">9,8g</p>
+                            <p class="text-[10px] text-[#1A3628]/50 uppercase tracking-[0.15em] mt-1">Eiwit per portie</p>
                         </div>
                     </div>
                 </div>
@@ -159,12 +145,11 @@
         </div>
     </header>
 
-    <!-- Partners Section -->
     <section id="partners" class="py-32 relative z-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
                 <div>
-                    <span class="block text-xs font-semibold uppercase tracking-[0.2em] text-[#1A3628]/40 mb-4">Distributie &amp; Partners</span>
+                    <span class="block text-xs font-semibold uppercase tracking-[0.2em] text-[#1A3628]/40 mb-4">Distributie & Partners</span>
                     <h2 class="font-serif text-5xl md:text-6xl tracking-tighter text-[#1A3628]">Partner in Vitaliteit</h2>
                 </div>
                 <p class="text-[#1A3628]/60 text-lg font-light max-w-sm leading-relaxed text-right md:text-left">
@@ -172,52 +157,52 @@
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Card 1 -->
-                <div class="group relative bg-white/40 hover:bg-white/80 border border-[#1A3628]/5 hover:border-[#1A3628]/10 transition-all duration-700 rounded-[2rem] p-12 flex flex-col justify-between h-full min-h-[450px] shadow-sm hover:shadow-xl">
-                    <div>
-                        <div class="w-14 h-14 bg-[#1A3628] rounded-2xl flex items-center justify-center text-[#FDFBF7] mb-10 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                            <span class="iconify" data-icon="lucide:store" data-width="24"></span>
-                        </div>
-                        <h3 class="font-serif text-4xl text-[#1A3628] mb-4">Voor de Winkelier</h3>
-                        <p class="text-[#1A3628]/60 font-light leading-relaxed text-lg">
-                            Verkoop SKYLD in premium <strong>omdozen van 12 stuks</strong>. Een 'High Margin' product dat klanten terug laat komen. Ideaal voor het hogere segment boerderijwinkels en delicatessen.
-                        </p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="group relative bg-white/40 hover:bg-white/80 border border-[#1A3628]/5 hover:border-[#1A3628]/10 transition-all duration-700 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl">
+                    <div class="h-[350px] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1601599561213-83238c276560?auto=format&fit=crop&q=80&w=800" alt="Boerderijwinkel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
                     </div>
-                    <div class="mt-12 pt-8 border-t border-[#1A3628]/5 flex items-center justify-between group/link cursor-pointer">
-                        <span class="text-xs uppercase tracking-[0.15em] font-medium text-[#1A3628]">Bekijk inkoopprijzen</span>
-                        <span class="iconify group-hover/link:translate-x-2 transition-transform duration-300 text-[#1A3628]" data-icon="lucide:arrow-right" data-width="20"></span>
+                    <div class="p-10 flex flex-col justify-between min-h-[250px]">
+                        <div>
+                            <h3 class="font-serif text-4xl text-[#1A3628] mb-4">Voor de Winkelier</h3>
+                            <p class="text-[#1A3628]/60 font-light leading-relaxed text-lg">
+                                Verkoop SKYLD in premium <strong>omdozen van 12 stuks</strong>. Een 'High Margin' product dat klanten terug laat komen. Ideaal voor het hogere segment boerderijwinkels.
+                            </p>
+                        </div>
+                        <div class="mt-8 flex items-center justify-between group/link cursor-pointer">
+                            <span class="text-xs uppercase tracking-[0.15em] font-medium text-[#1A3628]">Bekijk inkoopprijzen</span>
+                            <span class="iconify group-hover/link:translate-x-2 transition-transform duration-300 text-[#1A3628]" data-icon="lucide:arrow-right" data-width="20"></span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="group relative bg-[#EBEDE9]/30 hover:bg-[#EBEDE9]/60 border border-[#1A3628]/5 hover:border-[#1A3628]/10 transition-all duration-700 rounded-[2rem] p-12 flex flex-col justify-between h-full min-h-[450px] shadow-sm hover:shadow-xl">
-                    <div>
-                        <div class="w-14 h-14 bg-[#D4AF37] rounded-2xl flex items-center justify-center text-[#1A3628] mb-10 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                            <span class="iconify" data-icon="lucide:user" data-width="24"></span>
-                        </div>
-                        <h3 class="font-serif text-4xl text-[#1A3628] mb-4">Voor Uw Klant</h3>
-                        <p class="text-[#1A3628]/60 font-light leading-relaxed text-lg">
-                            Voor de fietser die herstelt of de senior die aansterkt. De <strong>single-serve cups</strong> zijn een symbool van zorg. Geen medicijngevoel, wel medische kwaliteit en pure verwennerij.
-                        </p>
+                <div class="group relative bg-[#EBEDE9]/30 hover:bg-[#EBEDE9]/60 border border-[#1A3628]/5 hover:border-[#1A3628]/10 transition-all duration-700 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl">
+                    <div class="h-[350px] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1594489812674-6725225d3090?auto=format&fit=crop&q=80&w=800" alt="Affogato" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
                     </div>
-                    <div class="mt-12 pt-8 border-t border-[#1A3628]/5 flex items-center justify-between group/link cursor-pointer">
-                        <span class="text-xs uppercase tracking-[0.15em] font-medium text-[#1A3628]">Bekijk de voordelen</span>
-                        <span class="iconify group-hover/link:translate-x-2 transition-transform duration-300 text-[#1A3628]" data-icon="lucide:arrow-right" data-width="20"></span>
+                    <div class="p-10 flex flex-col justify-between min-h-[250px]">
+                        <div>
+                            <h3 class="font-serif text-4xl text-[#1A3628] mb-4">Voor Uw Klant</h3>
+                            <p class="text-[#1A3628]/60 font-light leading-relaxed text-lg">
+                                Voor de fietser die herstelt of de senior die aansterkt. Serveer het als een perfecte Affogato of verkoop de <strong>single-serve cups</strong> als symbool van zorg.
+                            </p>
+                        </div>
+                        <div class="mt-8 flex items-center justify-between group/link cursor-pointer">
+                            <span class="text-xs uppercase tracking-[0.15em] font-medium text-[#1A3628]">Bekijk de voordelen</span>
+                            <span class="iconify group-hover/link:translate-x-2 transition-transform duration-300 text-[#1A3628]" data-icon="lucide:arrow-right" data-width="20"></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Specs Section (The Receipt) -->
     <section id="specs" class="py-32 bg-[#1A3628] text-[#FDFBF7] relative z-10 overflow-hidden">
-        <!-- Background decoration -->
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-white/5 rounded-full blur-[100px] pointer-events-none"></div>
 
         <div class="max-w-4xl mx-auto px-6 relative">
             <div class="text-center mb-20 space-y-6">
-                <span class="text-[#D1D9CE] text-[10px] uppercase tracking-[0.3em] font-medium border border-[#D1D9CE]/20 px-4 py-2 rounded-full">De Wetenschap</span>
+                <span class="text-[#D1D9CE] text-[10px] uppercase tracking-[0.3em] font-medium border border-[#D1D9CE]/20 px-4 py-2 rounded-full">De Inhoud</span>
                 <h2 class="font-serif text-5xl md:text-7xl tracking-tighter text-[#FDFBF7]">Natuur, Verrijkt<br>met Kracht</h2>
                 <p class="text-[#D1D9CE]/60 font-light text-lg max-w-xl mx-auto leading-relaxed">
                     Wij geloven niet in weglaten, maar in toevoegen wat écht werkt. 
@@ -225,40 +210,43 @@
                 </p>
             </div>
 
-            <!-- Receipt Card -->
             <div class="bg-[#FDFBF7] text-[#1A3628] mx-auto shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] relative max-w-[500px]">
-                <!-- Jagged Top -->
                 <div class="absolute top-0 left-0 w-full h-3 -mt-3 receipt-jagged" style="transform: rotate(180deg); background-size: 16px 16px;"></div>
 
                 <div class="p-10 md:p-14">
                     <div class="flex flex-col gap-10">
                         <div class="flex items-start justify-between border-b border-dashed border-[#1A3628]/10 pb-8 group">
                             <div>
-                                <span class="font-serif text-5xl md:text-6xl block mb-2 group-hover:translate-x-2 transition-transform duration-500">Lacaune</span>
-                                <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1A3628]/40">7% Vet &amp; A2 Eiwit</span>
+                                <span class="font-serif text-5xl md:text-6xl block mb-2 group-hover:translate-x-2 transition-transform duration-500">A2 Melk</span>
+                                <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1A3628]/40">Schapenmelk</span>
                             </div>
                             <div class="text-right max-w-[140px] pt-2">
-                                <p class="text-xs font-medium leading-relaxed text-[#1A3628]/60">De romigste basis. A2-eiwit voorkomt een opgeblazen gevoel.</p>
+                                <p class="text-xs font-medium leading-relaxed text-[#1A3628]/60">
+                                    De basis. Lichter verteerbaar dan koemelk en van nature romig zonder opgeblazen gevoel.
+                                </p>
                             </div>
                         </div>
 
                         <div class="flex items-start justify-between border-b border-dashed border-[#1A3628]/10 pb-8 group">
                             <div>
-                                <span class="font-serif text-5xl md:text-6xl block mb-2 group-hover:translate-x-2 transition-transform duration-500">HMB+</span>
-                                <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1A3628]/40">Spierbehoud</span>
+                                <span class="font-serif text-5xl md:text-6xl block mb-2 group-hover:translate-x-2 transition-transform duration-500">9,8g</span>
+                                <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1A3628]/40">Eiwit / 100ml</span>
                             </div>
                             <div class="text-right max-w-[140px] pt-2">
-                                <p class="text-xs font-medium leading-relaxed text-[#1A3628]/60">Bewezen ondersteuning voor spieropbouw en herstel na inspanning.</p>
+                                <p class="text-xs font-medium leading-relaxed text-[#1A3628]/60">
+                                    Bouwstenen voor je lichaam. Staat gelijk aan een proteïneshake, maar dan in de vorm van premium ijs.
+                                </p>
                             </div>
                         </div>
 
                         <div class="flex items-start justify-between pb-2 group">
                             <div>
-                                <span class="font-serif text-5xl md:text-6xl block mb-2 group-hover:translate-x-2 transition-transform duration-500">Colostrum</span>
-                                <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1A3628]/40">+ Omega 3</span>
+                                <span class="font-serif text-3xl md:text-4xl block mb-2 group-hover:translate-x-2 transition-transform duration-500 leading-tight">Creatine<br>HMB+<br>Magnesium</span>
                             </div>
                             <div class="text-right max-w-[140px] pt-2">
-                                <p class="text-xs font-medium leading-relaxed text-[#1A3628]/60">Ondersteunt het immuunsysteem en remt ontstekingen.</p>
+                                <p class="text-xs font-medium leading-relaxed text-[#1A3628]/60">
+                                    De krachtbron. Ondersteunt fysieke prestaties en spierherstel. Je proeft het niet, je merkt het wel.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -268,13 +256,11 @@
                     </div>
                 </div>
 
-                <!-- Jagged Bottom -->
                 <div class="absolute bottom-0 left-0 w-full h-3 -mb-3 receipt-jagged" style="background-size: 16px 16px;"></div>
             </div>
         </div>
     </section>
 
-    <!-- Interactive Section -->
     <section class="py-32 bg-[#E0F2FE]/20 overflow-hidden relative z-10" x-data="{ 
         active: 0, 
         slides: [
@@ -298,7 +284,6 @@
             <h2 class="font-serif text-4xl md:text-5xl mb-16 text-[#1A3628] tracking-tight border-b border-[#1A3628]/10 pb-8 inline-block">Momenten van Kracht</h2>
             
             <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-stretch">
-                <!-- Visual Box -->
                 <div class="lg:w-1/2 relative h-[500px] rounded-3xl overflow-hidden transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] shadow-2xl" :class="slides[active].color">
                      
                      <div class="absolute inset-0 flex items-center justify-center">
@@ -317,7 +302,6 @@
                      </div>
                 </div>
 
-                <!-- Content Box -->
                 <div class="lg:w-1/2 flex flex-col justify-center space-y-10 pl-4">
                     <div class="inline-block">
                         <span class="text-[10px] font-bold tracking-[0.25em] uppercase text-[#1A3628]/40 border-b border-[#1A3628]/20 pb-2" x-text="slides[active].pair"></span>
@@ -338,7 +322,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-[#FDFBF7] pt-32 pb-12 border-t border-[#1A3628]/5 relative z-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
@@ -372,11 +355,11 @@
                 <p>© 2026 SKYLD BV. Alle rechten voorbehouden.</p>
                 <div class="flex gap-6 mt-4 md:mt-0">
                     <a href="#" class="hover:text-[#1A3628]/60 transition-colors">Privacy</a>
-                    <a href="#" class="hover:text-[#1A3628]/60 transition-colors">NVWA &amp; Claims</a>
+                    <a href="#" class="hover:text-[#1A3628]/60 transition-colors">NVWA & Claims</a>
                 </div>
             </div>
         </div>
     </footer>
 
-
-</body></html>
+</body>
+</html>
