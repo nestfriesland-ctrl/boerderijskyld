@@ -36,15 +36,6 @@
             animation: float-slow 8s ease-in-out infinite;
         }
 
-        /* High-End 3D Scoop Gradient */
-        .cream-scoop {
-            background: radial-gradient(circle at 35% 30%, #ffffff 0%, #FDFBF7 45%, #EBE5D5 100%);
-            box-shadow: 
-                inset -20px -20px 60px rgba(26, 54, 40, 0.03),
-                inset 10px 10px 40px rgba(255, 255, 255, 0.8),
-                0 30px 60px -15px rgba(26, 54, 40, 0.15);
-        }
-
         /* Receipt Pattern */
         .receipt-jagged {
             background: linear-gradient(135deg, transparent 75%, #FDFBF7 75%) 0 50%,
@@ -121,17 +112,18 @@
                 </div>
             </div>
 
-            <div class="lg:col-span-5 order-1 lg:order-2 flex justify-center lg:justify-end items-center relative">
+            <div class="lg:col-span-5 order-1 lg:order-2 flex justify-center items-center relative">
                 <div class="absolute w-[500px] h-[500px] border border-[#1A3628]/5 rounded-full -z-10 animate-[spin_60s_linear_infinite]"></div>
                 <div class="absolute w-[400px] h-[400px] border border-[#1A3628]/5 rounded-full -z-10 animate-[spin_40s_linear_infinite_reverse]"></div>
                 
-                <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full animate-float flex items-center justify-center z-10 shadow-[0_30px_60px_-15px_rgba(26,54,40,0.15)]">
-                    <div class="absolute inset-0 rounded-full overflow-hidden border border-[#1A3628]/10 bg-[#EBE5D5]">
+                <div class="relative w-full max-w-[400px] aspect-[4/5] rounded-[3rem] animate-float flex items-center justify-center z-10 shadow-[0_30px_60px_-15px_rgba(26,54,40,0.15)]">
+                    <div class="absolute inset-0 rounded-[3rem] overflow-hidden border border-[#1A3628]/10 bg-[#EBE5D5]">
                         <img src="assets/Gemini_Generated_Image_2abxbe2abxbe2abx.jpg" alt="SKYLD Premium Cup" class="w-full h-full object-cover">
                         
-                        <div class="absolute inset-0 rounded-full shadow-[inset_0_0_40px_rgba(0,0,0,0.1)] pointer-events-none"></div>
+                        <div class="absolute inset-0 rounded-[3rem] shadow-[inset_0_0_40px_rgba(0,0,0,0.1)] pointer-events-none"></div>
                     </div>
                 </div>
+                
                 <div class="absolute -bottom-6 left-0 md:-left-12 bg-white/80 backdrop-blur-xl p-6 rounded-2xl border border-white/60 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.05)] z-20 animate-float" style="animation-delay: 2s;">
                     <div class="flex items-center gap-4">
                         <div class="w-10 h-10 rounded-full bg-[#F5F5F0] flex items-center justify-center text-[#1A3628]">
@@ -263,56 +255,43 @@
         </div>
     </section>
 
-    <section class="py-32 bg-[#E0F2FE]/20 overflow-hidden relative z-10" x-data="{ 
-        active: 0, 
-        slides: [
-            { 
-                title: 'Post-Workout Beloning', 
-                desc: 'De perfecte balans van koolhydraten en eiwitten na een lange fietsrit. Heerlijk bij een dubbele espresso.', 
-                pair: 'SKYLD + Espresso',
-                image: 'assets/Gemini_Generated_Image_qd7xs7qd7xs7qd7x.jpg'
-            },
-            { 
-                title: 'Herstel Dessert', 
-                desc: 'Voor wie moet aansterken. Combineer met vers rood fruit voor extra antioxidanten.', 
-                pair: 'SKYLD + Rood Fruit',
-                image: 'https://images.unsplash.com/photo-1488900128323-21503983a07e?q=80&w=900&auto=format&fit=crop'
-            }
-        ] 
-    }">
+    <section class="py-32 bg-[#E0F2FE]/20 relative z-10">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="font-serif text-4xl md:text-5xl mb-16 text-[#1A3628] tracking-tight border-b border-[#1A3628]/10 pb-8 inline-block">Momenten van Kracht</h2>
-            
-            <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-stretch">
-                <div class="lg:w-1/2 relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-                     <img :src="slides[active].image" class="w-full h-full object-cover transition-opacity duration-700" alt="Serveersuggestie">
-                     
-                     <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/50 to-transparent"></div>
+            <h2 class="font-serif text-4xl md:text-5xl mb-20 text-[#1A3628] tracking-tight border-b border-[#1A3628]/10 pb-8 inline-block">Recepten voor de Horeca</h2>
 
-                     <div class="absolute bottom-8 right-8 flex gap-3">
-                         <button @click="active = active === 0 ? 1 : 0" class="w-12 h-12 rounded-full border border-white/40 hover:bg-white/20 backdrop-blur-md text-white flex items-center justify-center transition-all duration-300 hover:scale-105">
-                             <span class="iconify" data-icon="lucide:arrow-left" data-width="20"></span>
-                         </button>
-                         <button @click="active = active === 0 ? 1 : 0" class="w-12 h-12 rounded-full bg-white text-[#1A3628] flex items-center justify-center transition-all duration-300 hover:scale-105 shadow-lg">
-                            <span class="iconify" data-icon="lucide:arrow-right" data-width="20"></span>
-                        </button>
-                     </div>
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
+                <div class="bg-[#FDFBF7] rounded-[2rem] overflow-hidden border border-[#1A3628]/5 shadow-lg hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-[400px] relative overflow-hidden">
+                         <img src="assets/Gemini_Generated_Image_ahhuowahhuowahhu.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Warme Apple Crumble met SKYLD">
+                    </div>
+                    <div class="p-10">
+                        <h3 class="font-serif text-3xl text-[#1A3628] mb-6">Warme Apple Crumble</h3>
+                        <div class="space-y-4">
+                            <p class="text-sm font-bold uppercase tracking-widest text-[#1A3628]/50 border-b border-[#1A3628]/10 pb-2 inline-block">Ingrediënten (per portie)</p>
+                            <ul class="text-[#1A3628]/70 space-y-2 font-light text-lg">
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#1A3628]/40"></span> 1 flinke bol SKYLD Schapenijs</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#1A3628]/40"></span> 150g Warme appel-kaneel vulling</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#1A3628]/40"></span> 50g Havermout-amandel crumble</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#1A3628]/40"></span> Snufje grof zeezout</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="lg:w-1/2 flex flex-col justify-center space-y-10 pl-4">
-                    <div class="inline-block">
-                        <span class="text-[10px] font-bold tracking-[0.25em] uppercase text-[#1A3628]/40 border-b border-[#1A3628]/20 pb-2" x-text="slides[active].pair"></span>
+                <div class="bg-[#FDFBF7] rounded-[2rem] overflow-hidden border border-[#1A3628]/5 shadow-lg hover:shadow-xl transition-shadow duration-500">
+                    <div class="h-[400px] relative overflow-hidden">
+                         <img src="assets/Gemini_Generated_Image_qd7xs7qd7xs7qd7x.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Affogato met SKYLD">
                     </div>
-                    
-                    <h3 class="font-serif text-6xl md:text-7xl text-[#1A3628] leading-[0.9] tracking-tighter" x-text="slides[active].title" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0"></h3>
-                    
-                    <p class="text-xl font-light text-[#1A3628]/60 max-w-md leading-relaxed" x-text="slides[active].desc" x-transition:enter="transition ease-out duration-700" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"></p>
-                    
-                    <div class="pt-6">
-                        <a href="#" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-[#1A3628] border-b border-[#1A3628]/30 pb-1 hover:text-[#1A3628]/70 hover:border-[#1A3628]/70 transition-all">
-                            <span>Download serving suggestions</span>
-                            <span class="iconify" data-icon="lucide:arrow-up-right" data-width="14"></span>
-                        </a>
+                    <div class="p-10">
+                        <h3 class="font-serif text-3xl text-[#1A3628] mb-6">De Ultieme Affogato</h3>
+                        <div class="space-y-4">
+                            <p class="text-sm font-bold uppercase tracking-widest text-[#1A3628]/50 border-b border-[#1A3628]/10 pb-2 inline-block">Ingrediënten (per portie)</p>
+                            <ul class="text-[#1A3628]/70 space-y-2 font-light text-lg">
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#1A3628]/40"></span> 1 bol SKYLD Schapenijs (bevroren in glas)</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#1A3628]/40"></span> Dubbele espresso (heet, apart serveren)</li>
+                                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#1A3628]/40"></span> Optioneel: Klein Amaretti koekje</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
