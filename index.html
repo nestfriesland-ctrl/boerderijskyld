@@ -33,6 +33,13 @@
             filter: drop-shadow(0 25px 25px rgba(0,0,0,0.15));
         }
 
+        .receipt-jagged {
+            background: linear-gradient(135deg, transparent 75%, #FDFBF7 75%) 0 50%,
+                        linear-gradient(-135deg, transparent 75%, #FDFBF7 75%) 0 50%;
+            background-size: 20px 20px;
+            background-repeat: repeat-x;
+        }
+
         .logo-color-filter {
             filter: brightness(0) saturate(100%) invert(16%) sepia(18%) saturate(1062%) hue-rotate(101deg) brightness(95%) contrast(92%);
         }
@@ -46,9 +53,8 @@
             transform: scale(1.05);
         }
 
-        /* Custom Table Styling */
         .nutrition-table td {
-            padding: 1rem 0;
+            padding: 0.75rem 0;
             border-bottom: 1px solid rgba(26, 54, 40, 0.08);
         }
 
@@ -62,10 +68,8 @@
     <nav class="fixed top-0 w-full z-50 transition-all duration-500 backdrop-blur-xl bg-[#FDFBF7]/80 border-b border-[#1A3628]/5">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="#" class="flex items-center group">
-                <div class="flex items-center space-x-1">
-                    <img src="assets/Scherm­afbeelding 2026-01-26 om 14.42.36.png" alt="SKYLD Logo" class="h-12 w-auto logo-color-filter transition-transform group-hover:scale-105">
-                    <span class="font-serif text-2xl tracking-tighter mt-1">ijs</span>
-                </div>
+                <img src="assets/Scherm­afbeelding 2026-01-26 om 14.42.36.png" alt="SKYLD" class="h-10 w-auto logo-color-filter transition-transform group-hover:scale-105">
+                <span class="font-serif text-2xl tracking-tighter ml-2 mt-1">ijs</span>
             </a>
             <div class="hidden md:flex items-center space-x-12 text-[11px] font-bold uppercase tracking-[0.2em] text-[#1A3628]/70">
                 <a href="#product" class="hover:text-[#1A3628] transition-colors">Wetenschap</a>
@@ -86,32 +90,23 @@
 
     <header id="product" class="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden z-10">
         <div class="max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-6 space-y-8">
+            <div class="lg:col-span-7 space-y-8">
                 <div class="space-y-2">
                     <span class="text-xs font-bold uppercase tracking-[0.3em] text-[#1A3628]/40">Premium Performance Food</span>
                     <h1 class="font-serif text-7xl md:text-[8rem] leading-[0.8] text-[#1A3628]">De Zachte <br><span class="italic font-light opacity-90">Revolutie.</span></h1>
                     <p class="text-2xl font-serif italic text-[#1A3628]/60 pt-4">Functioneel Eiwitrijk Schapenijs</p>
                 </div>
                 
-                <div class="bg-white/40 backdrop-blur-sm rounded-3xl p-8 border border-[#1A3628]/5 max-w-md">
-                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-4 opacity-40">Voedingswaarden per portie</h4>
+                <p class="text-xl font-light text-[#1A3628]/80 max-w-lg leading-relaxed">
+                    Lacaune schapenijs uit Friesland. De perfecte balans tussen medische wetenschap en gastronomische verfijning.
+                </p>
+
+                <div class="bg-white/40 backdrop-blur-sm rounded-3xl p-8 border border-[#1A3628]/5 max-w-md shadow-sm">
                     <table class="w-full nutrition-table text-sm">
-                        <tr>
-                            <td class="font-medium">Eiwitten (Lacaune schaap)</td>
-                            <td class="text-right italic">9.8g</td>
-                        </tr>
-                        <tr>
-                            <td class="font-medium">Creatine Monohydraat</td>
-                            <td class="text-right italic">3.0g</td>
-                        </tr>
-                        <tr>
-                            <td class="font-medium">Magnesium (Citraat)</td>
-                            <td class="text-right italic">150mg</td>
-                        </tr>
-                        <tr>
-                            <td class="font-medium">Vitamines D3, K2 & E</td>
-                            <td class="text-right italic">Verrijkt</td>
-                        </tr>
+                        <tr><td class="font-medium">Eiwitten (Lacaune schaap)</td><td class="text-right italic">9.8g</td></tr>
+                        <tr><td class="font-medium">Creatine Monohydraat</td><td class="text-right italic">3.0g</td></tr>
+                        <tr><td class="font-medium">Magnesium (Citraat)</td><td class="text-right italic">150mg</td></tr>
+                        <tr><td class="font-medium">Vitamines D, K & E</td><td class="text-right italic">Aanwezig</td></tr>
                     </table>
                 </div>
 
@@ -121,7 +116,7 @@
                 </div>
             </div>
 
-            <div class="lg:col-span-6 flex justify-center relative">
+            <div class="lg:col-span-5 flex justify-center relative">
                 <div class="relative w-full max-w-[450px] animate-float z-10">
                     <img src="assets/lossecup" alt="SKYLD Cup" class="w-full h-auto cup-render">
                     <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 w-3/4 h-10 bg-black/10 blur-2xl rounded-full -z-10"></div>
@@ -130,42 +125,92 @@
         </div>
     </header>
 
+    <section id="zorg" class="py-32 relative z-10 overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="font-serif text-5xl md:text-7xl mb-8 text-[#1A3628]">Ervaar het verschil in uw zorginstelling</h2>
+            <p class="text-xl text-[#1A3628]/60 font-light mb-12 max-w-2xl mx-auto">
+                Wij geloven in persoonlijk contact. Wilt u een proeverij organiseren voor uw team of bewoners? Bel of app ons direct.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+                <a href="tel:+31640902266" class="w-full sm:w-auto flex items-center justify-center space-x-3 px-14 py-5 bg-white border border-[#1A3628]/10 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <span class="iconify text-[#1A3628]/40 text-xl" data-icon="lucide:phone"></span>
+                    <span class="font-bold uppercase tracking-[0.2em] text-sm">Bellen</span>
+                </a>
+                <a href="https://wa.me/31640902266" class="w-full sm:w-auto flex items-center justify-center space-x-3 px-14 py-5 bg-[#31639C] text-white rounded-2xl shadow-lg hover:brightness-110 transition-all">
+                    <span class="iconify text-xl" data-icon="lucide:message-circle"></span>
+                    <span class="font-bold uppercase tracking-[0.2em] text-sm text-white">Appen</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="partners" class="py-32 bg-white/30 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20"><h2 class="font-serif text-5xl md:text-7xl text-[#1A3628]">Partner in Vitaliteit</h2></div>
+            <div class="grid md:grid-cols-2 gap-12 items-stretch">
+                <div class="bg-white rounded-[2.5rem] overflow-hidden border border-[#1A3628]/5 shadow-sm flex flex-col">
+                    <div class="h-[350px] overflow-hidden"><img src="assets/Gemini_Generated_Image_ywkt7bywkt7bywkt.jpg" class="w-full h-full object-cover"></div>
+                    <div class="p-12 flex-grow">
+                        <h3 class="font-serif text-4xl mb-4">Voor de Winkelier</h3>
+                        <p class="text-[#1A3628]/70 font-light text-lg mb-8">Premium omdozen van 12 stuks voor speciaalzaken.</p>
+                        <a href="#" class="text-xs font-bold uppercase tracking-widest border-b-2 border-[#1A3628] pb-1">Inkoopprijzen opvragen</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-[2.5rem] overflow-hidden border border-[#1A3628]/5 shadow-sm flex flex-col">
+                    <div class="h-[350px] overflow-hidden"><img src="assets/fotoaffogatokoffiezaak.jpg" class="w-full h-full object-cover"></div>
+                    <div class="p-12 flex-grow">
+                        <h3 class="font-serif text-4xl mb-4">Voor de Horeca</h3>
+                        <p class="text-[#1A3628]/70 font-light text-lg mb-8">Functioneel herstelmoment op het terras of basis voor desserts.</p>
+                        <a href="#" class="text-xs font-bold uppercase tracking-widest border-b-2 border-[#1A3628] pb-1">Catalogus bekijken</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recepten" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+            <div class="flex flex-col items-center">
+                <div class="recipe-bubble w-80 h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl relative z-10 animate-float" style="animation-delay: 0.5s;">
+                    <img src="assets/Gemini_Generated_Image_ahhuowahhuowahhu.jpg" class="w-full h-full object-cover">
+                </div>
+                <div class="mt-[-40px] bg-white p-12 rounded-3xl shadow-xl border border-[#1A3628]/5 max-w-sm relative z-20 receipt-jagged pt-16 text-center">
+                    <h3 class="font-serif text-3xl mb-4">Apple Crumble</h3>
+                    <p class="text-sm text-[#1A3628]/60 leading-relaxed">De perfecte combinatie van warm en koud.</p>
+                </div>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="recipe-bubble w-80 h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl relative z-10 animate-float" style="animation-delay: 2s;">
+                    <img src="assets/Gemini_Generated_Image_qd7xs7qd7xs7qd7x.jpg" class="w-full h-full object-cover">
+                </div>
+                <div class="mt-[-40px] bg-white p-12 rounded-3xl shadow-xl border border-[#1A3628]/5 max-w-sm relative z-20 receipt-jagged pt-16 text-center">
+                    <h3 class="font-serif text-3xl mb-4">Ultieme Affogato</h3>
+                    <p class="text-sm text-[#1A3628]/60 leading-relaxed">Dubbele espresso over SKYLD ijs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="bg-white pt-32 pb-12 border-t border-[#1A3628]/5 relative z-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col items-center mb-24 text-center">
                 <span class="text-[10px] font-bold uppercase tracking-[0.5em] text-[#1A3628]/30 mb-14">Ondersteund door</span>
                 <div class="flex flex-wrap justify-center items-center gap-16 md:gap-32">
                     <img src="assets/Flag_of_Europe.svg" alt="EU" class="h-10 w-auto partner-logo">
-                    <img src="assets/Logo_Versnellingsagenda_los_smal_transparant.png.webp" alt="Versnellingsagenda" class="h-10 w-auto partner-logo">
+                    <img src="assets/Logo_Versnellingsagenda_los_smal_transparant.png.webp" alt="VA" class="h-10 w-auto partner-logo">
                     <img src="assets/SNN_logo_naamvoluit_CMYK_png.png" alt="SNN" class="h-11 w-auto partner-logo">
                 </div>
             </div>
-
             <div class="flex flex-col items-center space-y-12">
-                <div class="flex flex-col items-center group">
-                    <div class="flex items-center space-x-2">
-                        <img src="assets/Scherm­afbeelding 2026-01-26 om 14.42.36.png" alt="SKYLD" class="h-20 w-auto logo-color-filter">
-                        <span class="font-serif text-5xl tracking-tighter mt-4 text-[#1A3628]">ijs</span>
-                    </div>
+                <div class="flex flex-col items-center">
+                    <img src="assets/Scherm­afbeelding 2026-01-26 om 14.42.36.png" alt="SKYLD" class="h-16 w-auto logo-color-filter">
+                    <span class="font-serif text-4xl tracking-tighter mt-3 text-[#1A3628]">ijs</span>
                 </div>
-                
                 <div class="text-center space-y-2">
-                    <p class="text-[#1A3628]/60 font-medium italic opacity-80">Gemaakt in Luxwoude, Friesland</p>
-                    <p class="text-[#1A3628]/60 font-medium">Hegedyk 21, 8405GR Luxwoude</p>
-                    <a href="mailto:mail@skyld.nl" class="inline-flex items-center space-x-3 mt-6 px-8 py-4 bg-[#F4F7F9] rounded-2xl text-[#31639C] font-bold text-sm tracking-wide hover:bg-[#E8F0F5] transition-colors">
-                        <span class="iconify text-lg" data-icon="lucide:mail"></span>
-                        <span>mail@skyld.nl</span>
-                    </a>
+                    <p class="text-[#1A3628]/60 font-medium italic opacity-80">Luxwoude, Friesland</p>
+                    <a href="mailto:mail@skyld.nl" class="inline-flex items-center space-x-3 mt-6 px-8 py-4 bg-[#F4F7F9] rounded-2xl text-[#31639C] font-bold text-sm tracking-wide">mail@skyld.nl</a>
                 </div>
-
-                <div class="flex space-x-10 text-[10px] font-bold uppercase tracking-[0.2em] text-[#1A3628]/40">
-                    <a href="#" class="hover:text-[#1A3628]">Privacy Statement</a>
-                    <a href="#" class="hover:text-[#1A3628]">Algemene Voorwaarden</a>
-                </div>
-
-                <p class="text-[9px] text-[#1A3628]/30 uppercase tracking-[0.3em] pt-8">
-                    © 2026 SKYLD ZORG
-                </p>
+                <p class="text-[9px] text-[#1A3628]/30 uppercase tracking-[0.3em] pt-8">© 2026 SKYLD ZORG</p>
             </div>
         </div>
     </footer>
