@@ -12,7 +12,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/2.0.0/iconify.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <style>
         .font-serif { font-family: 'Instrument Serif', serif; }
@@ -25,16 +24,15 @@
 
         @keyframes float-slow {
             0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(1deg); } 
+            50% { transform: translateY(-20px) rotate(2deg); } 
             100% { transform: translateY(0px) rotate(0deg); }
         }
         .animate-float { animation: float-slow 8s ease-in-out infinite; }
 
-        .recipe-bubble {
-            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        .recipe-bubble:hover {
-            transform: scale(1.05) translateY(-10px);
+        /* Verbeterde rendering van de cup zonder de lelijke witte randen */
+        .cup-render {
+            mix-blend-mode: multiply; /* Laat de cup samensmelten met de beige achtergrond */
+            filter: drop-shadow(0 25px 25px rgba(0,0,0,0.15));
         }
 
         .receipt-jagged {
@@ -47,7 +45,7 @@
         h1, h2, h3 { letter-spacing: -0.03em; }
     </style>
 </head>
-<body class="bg-[#FDFBF7] text-[#1A3628] font-sans antialiased selection:bg-[#1A3628] selection:text-[#FDFBF7] relative">
+<body class="bg-[#FDFBF7] text-[#1A3628] font-sans antialiased relative">
 
     <div class="fixed inset-0 pointer-events-none z-0 bg-noise opacity-60 mix-blend-multiply"></div>
 
@@ -55,123 +53,109 @@
         <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
             <a href="#" class="relative group">
                 <span class="font-serif text-3xl tracking-tighter text-[#1A3628]">SKYLD</span>
-                <span class="absolute -bottom-1 left-0 w-0 h-px bg-[#1A3628] transition-all duration-500 group-hover:w-full"></span>
             </a>
             <div class="hidden md:flex items-center space-x-12 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#1A3628]/70">
-                <a href="#partners" class="hover:text-[#1A3628] transition-colors">Retail</a>
-                <a href="#specs" class="hover:text-[#1A3628] transition-colors">Inhoud</a>
-                <a href="#recepten" class="hover:text-[#1A3628] transition-colors">Horeca</a>
+                <a href="#product" class="hover:text-[#1A3628] transition-colors">Ons IJs</a>
+                <a href="#partners" class="hover:text-[#1A3628] transition-colors">Retail & Horeca</a>
+                <a href="#recepten" class="hover:text-[#1A3628] transition-colors">Inspiratie</a>
             </div>
-            <a href="#" class="hidden sm:inline-flex px-6 py-3 text-[11px] font-bold uppercase tracking-[0.15em] text-white bg-[#1A3628] rounded-full hover:bg-[#234232] transition-all shadow-lg shadow-[#1A3628]/20">
+            <a href="#" class="hidden sm:inline-flex px-6 py-3 text-[11px] font-bold uppercase tracking-[0.15em] text-white bg-[#1A3628] rounded-full hover:bg-[#234232] transition-all">
                 Zakelijk Bestellen
             </a>
         </div>
     </nav>
 
-    <header class="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden z-10">
-        <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-[#FFFBEB] rounded-full blur-3xl opacity-40 -translate-y-1/2 translate-x-1/4"></div>
+    <header id="product" class="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden z-10">
         <div class="max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-7 space-y-10">
-                <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white border border-[#1A3628]/10 shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-green-600 animate-pulse"></span>
-                    <span class="text-[11px] uppercase tracking-[0.2em] font-bold text-[#1A3628]">Ontwikkeld door Internisten</span>
+            <div class="lg:col-span-7 space-y-8">
+                <div class="space-y-2">
+                    <span class="text-xs font-bold uppercase tracking-[0.3em] text-[#1A3628]/40">Premium Performance Food</span>
+                    <h1 class="font-serif text-7xl md:text-[8rem] leading-[0.8] text-[#1A3628]">De Zachte <br><span class="italic font-light opacity-90">Revolutie.</span></h1>
+                    <p class="text-2xl font-serif italic text-[#1A3628]/60 pt-4">Functioneel Eiwitrijk Schapenijs</p>
                 </div>
-                <h1 class="font-serif text-7xl md:text-[7.5rem] leading-[0.85] text-[#1A3628]">De Zachte <br><span class="italic font-light opacity-90">Revolutie.</span></h1>
-                <p class="text-xl font-light text-[#1A3628]/80 max-w-lg leading-relaxed">Lacaune schapenijs uit Friesland. De perfecte balans tussen medische wetenschap en gastronomische verfijning.</p>
-                <div class="flex gap-4">
-                    <a href="#recepten" class="inline-block px-8 py-4 bg-[#1A3628] text-white rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-xl shadow-[#1A3628]/20">Horeca Recepten</a>
-                    <a href="#partners" class="inline-block px-8 py-4 border border-[#1A3628]/20 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white transition-all">Distributie</a>
+                
+                <p class="text-xl font-light text-[#1A3628]/80 max-w-lg leading-relaxed">
+                    Lacaune schapenijs uit Friesland. De perfecte balans tussen medische wetenschap en gastronomische verfijning. 9,8g eiwit per portie, verrijkt met Creatine en Magnesium.
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#recepten" class="px-8 py-4 bg-[#1A3628] text-white rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-xl shadow-[#1A3628]/20">Horeca Recepten</a>
+                    <a href="#partners" class="px-8 py-4 border border-[#1A3628]/20 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white transition-all">Distributie</a>
                 </div>
             </div>
+
             <div class="lg:col-span-5 flex justify-center relative">
-                <div class="relative w-full max-w-[420px] animate-float z-10 drop-shadow-[0_35px_35px_rgba(0,0,0,0.1)]">
-                    <img src="assets/lossecup" alt="SKYLD Premium Cup" class="w-full h-auto object-contain">
+                <div class="relative w-full max-w-[450px] animate-float z-10">
+                    <img src="assets/lossecup" alt="SKYLD Cup" class="w-full h-auto cup-render">
+                    <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 w-3/4 h-10 bg-black/10 blur-2xl rounded-full -z-10"></div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="partners" class="py-32 bg-white/50 relative z-10">
+    <section id="partners" class="py-32 bg-white/30 relative z-10">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="font-serif text-5xl md:text-6xl mb-16 text-[#1A3628]">Partner in Vitaliteit</h2>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="group flex flex-col space-y-8">
-                    <div class="aspect-[16/10] rounded-[2.5rem] overflow-hidden border border-[#1A3628]/5 shadow-sm">
-                        <img src="assets/Gemini_Generated_Image_ywkt7bywkt7bywkt.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" alt="Luxe Retail">
+            <div class="text-center mb-20">
+                <h2 class="font-serif text-5xl md:text-7xl text-[#1A3628]">Partner in Vitaliteit</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-stretch">
+                <div class="bg-white rounded-[2.5rem] overflow-hidden border border-[#1A3628]/5 shadow-sm flex flex-col">
+                    <div class="h-[350px] overflow-hidden">
+                        <img src="assets/Gemini_Generated_Image_ywkt7bywkt7bywkt.jpg" class="w-full h-full object-cover" alt="Retail">
                     </div>
-                    <div class="bg-[#EBEDE9]/40 p-10 rounded-[2.5rem] border border-[#1A3628]/5 hover:shadow-xl transition-all">
+                    <div class="p-12 flex-grow">
                         <h3 class="font-serif text-4xl mb-4">Voor de Winkelier</h3>
-                        <p class="text-[#1A3628]/70 font-light text-lg mb-8">Premium omdozen van 12 stuks. Een 'High Margin' product voor het hogere segment speciaalzaken.</p>
-                        <span class="text-xs font-bold uppercase tracking-widest border-b-2 border-[#1A3628] pb-1 cursor-pointer">Inkoopprijzen opvragen</span>
+                        <p class="text-[#1A3628]/70 font-light text-lg mb-8">Premium omdozen van 12 stuks. Een 'High Margin' product voor het hogere segment speciaalzaken en boerderijwinkels.</p>
+                        <a href="#" class="text-xs font-bold uppercase tracking-widest border-b-2 border-[#1A3628] pb-1 hover:text-green-800 transition-colors">Inkoopprijzen opvragen</a>
                     </div>
                 </div>
 
-                <div class="group flex flex-col space-y-8 md:mt-16">
-                    <div class="aspect-[16/10] rounded-[2.5rem] overflow-hidden border border-[#1A3628]/5 shadow-sm">
-                        <img src="assets/fotoaffogatokoffiezaak.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" alt="Horeca Serving">
+                <div class="bg-white rounded-[2.5rem] overflow-hidden border border-[#1A3628]/5 shadow-sm flex flex-col">
+                    <div class="h-[350px] overflow-hidden">
+                        <img src="assets/fotoaffogatokoffiezaak.jpg" class="w-full h-full object-cover" alt="Horeca">
                     </div>
-                    <div class="bg-white p-10 rounded-[2.5rem] border border-[#1A3628]/5 hover:shadow-xl transition-all">
+                    <div class="p-12 flex-grow">
                         <h3 class="font-serif text-4xl mb-4">Voor de Horeca</h3>
-                        <p class="text-[#1A3628]/70 font-light text-lg mb-8">Ideaal als functioneel herstelmoment op het terras of als high-end basis voor uw desserts.</p>
-                        <span class="text-xs font-bold uppercase tracking-widest border-b-2 border-[#1A3628] pb-1 cursor-pointer">Catalogus bekijken</span>
+                        <p class="text-[#1A3628]/70 font-light text-lg mb-8">Ideaal als functioneel herstelmoment op het terras of als high-end basis voor uw desserts en Affogato's.</p>
+                        <a href="#" class="text-xs font-bold uppercase tracking-widest border-b-2 border-[#1A3628] pb-1 hover:text-green-800 transition-colors">Catalogus bekijken</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="recepten" class="py-32 relative overflow-hidden">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-[#FFFBEB] rounded-full blur-[120px] opacity-30 -z-10"></div>
-        
-        <div class="max-w-7xl mx-auto px-6 text-center mb-20">
-            <span class="text-xs font-bold uppercase tracking-[0.3em] text-[#1A3628]/40 block mb-4">Inspiratie</span>
-            <h2 class="font-serif text-6xl md:text-8xl text-[#1A3628]">Horeca Creaties</h2>
-        </div>
-
-        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    <section id="recepten" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
             <div class="flex flex-col items-center">
-                <div class="recipe-bubble w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl relative z-10 animate-float" style="animation-delay: 0.5s;">
+                <div class="recipe-bubble w-80 h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl relative z-10 animate-float" style="animation-delay: 0.5s;">
                     <img src="assets/Gemini_Generated_Image_ahhuowahhuowahhu.jpg" class="w-full h-full object-cover">
                 </div>
-                <div class="mt-[-40px] bg-white p-10 rounded-3xl shadow-xl border border-[#1A3628]/5 max-w-sm relative z-20 receipt-jagged pt-16">
-                    <h3 class="font-serif text-3xl mb-4 text-center">Apple Crumble</h3>
-                    <ul class="text-sm space-y-2 text-[#1A3628]/70 font-medium">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> 1 Bol SKYLD Schapenijs</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Warme appel-kaneel vulling</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Havermout-amandel crumble</li>
-                    </ul>
+                <div class="mt-[-40px] bg-white p-12 rounded-3xl shadow-xl border border-[#1A3628]/5 max-w-sm relative z-20 receipt-jagged pt-16">
+                    <h3 class="font-serif text-3xl mb-4">Apple Crumble</h3>
+                    <p class="text-sm text-[#1A3628]/60 leading-relaxed">Combineer de romige textuur van SKYLD met warme appel-kaneel vulling en een knapperige havermout-amandel crumble.</p>
                 </div>
             </div>
 
             <div class="flex flex-col items-center">
-                <div class="recipe-bubble w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl relative z-10 animate-float" style="animation-delay: 2s;">
+                <div class="recipe-bubble w-80 h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl relative z-10 animate-float" style="animation-delay: 2s;">
                     <img src="assets/Gemini_Generated_Image_qd7xs7qd7xs7qd7x.jpg" class="w-full h-full object-cover">
                 </div>
-                <div class="mt-[-40px] bg-white p-10 rounded-3xl shadow-xl border border-[#1A3628]/5 max-w-sm relative z-20 receipt-jagged pt-16">
-                    <h3 class="font-serif text-3xl mb-4 text-center">Ultieme Affogato</h3>
-                    <ul class="text-sm space-y-2 text-[#1A3628]/70 font-medium">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> 1 Bevroren SKYLD Cup</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Dubbele espresso (heet)</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Geserveerd in kristallen glas</li>
-                    </ul>
+                <div class="mt-[-40px] bg-white p-12 rounded-3xl shadow-xl border border-[#1A3628]/5 max-w-sm relative z-20 receipt-jagged pt-16">
+                    <h3 class="font-serif text-3xl mb-4">Ultieme Affogato</h3>
+                    <p class="text-sm text-[#1A3628]/60 leading-relaxed">De klassieke Affogato, maar dan met een functionele upgrade. Dubbele espresso over een bevroren cup SKYLD ijs.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-white pt-32 pb-12 border-t border-[#1A3628]/5 relative z-10">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-12">
-            <div class="space-y-6">
-                <a href="#" class="font-serif text-7xl tracking-tighter text-[#1A3628]">SKYLD</a>
-                <p class="text-[#1A3628]/60 text-sm max-w-xs font-light leading-relaxed">De nieuwe standaard voor functioneel ijs. <br>Gemaakt in Luxwoude. Grutsk op ús product.</p>
-            </div>
-            <div class="flex flex-col md:items-end space-y-6">
-                <div class="flex gap-8 text-[11px] font-bold uppercase tracking-widest text-[#1A3628]">
-                    <a href="#" class="hover:opacity-50 transition-opacity">Contact</a>
-                    <a href="#" class="hover:opacity-50 transition-opacity">B2B Portaal</a>
-                </div>
-                <p class="text-[10px] text-[#1A3628]/30 uppercase tracking-widest">© 2026 SKYLD BV. Alle rechten voorbehouden.</p>
-            </div>
+    <footer class="bg-white pt-24 pb-12 border-t border-[#1A3628]/5">
+        <div class="max-w-7xl mx-auto px-6 text-center space-y-8">
+            <span class="font-serif text-5xl tracking-tighter text-[#1A3628]">SKYLD</span>
+            <p class="text-[10px] text-[#1A3628]/30 uppercase tracking-widest leading-loose">
+                Ontwikkeld door Internisten. Gemaakt in Luxwoude, Friesland.<br>
+                © 2026 SKYLD BV. Alle rechten voorbehouden.
+            </p>
         </div>
     </footer>
 
