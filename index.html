@@ -75,7 +75,7 @@
             border-bottom: 1px solid rgba(26, 54, 40, 0.08);
         }
 
-        /* Nieuwe Map Interface Styles */
+        /* Map Interface Styles */
         .map-container {
             background: radial-gradient(circle at center, rgba(26, 54, 40, 0.03) 0%, transparent 70%);
             border-radius: 4rem;
@@ -100,23 +100,20 @@
             width: 80%; 
             height: 80%; 
             object-fit: contain; 
-            transition: transform 0.3s ease;
         }
 
         .group:hover .shop-blob { 
-            transform: scale(2.8); 
+            transform: scale(3.2); 
             z-index: 50; 
-            border-width: 1px;
             box-shadow: 0 20px 40px rgba(26, 54, 40, 0.2);
         }
 
         .shop-tooltip {
-            position: absolute; top: 110%; left: 50%; transform: translateX(-50%) translateY(10px);
+            position: absolute; top: 115%; left: 50%; transform: translateX(-50%) translateY(10px);
             background: #1A3628; color: white; font-size: 11px;
             font-weight: 600; padding: 0.6rem 1.2rem;
             border-radius: 12px; opacity: 0; pointer-events: none;
             transition: all 0.3s ease; white-space: nowrap; z-index: 100;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
         .group:hover .shop-tooltip { 
@@ -127,7 +124,7 @@
         .mobile-logo-float {
             height: 5.5rem; width: 5.5rem; border-radius: 20px; background: white;
             padding: 0.8rem; border: 1px solid rgba(26, 54, 40, 0.08);
-            object-fit: contain; box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            object-fit: contain; margin-right: 2rem;
         }
 
         h1, h2, h3 { letter-spacing: -0.03em; }
@@ -170,19 +167,23 @@
                     </h1>
                     <p class="text-xl md:text-2xl font-serif italic text-[#1A3628]/60">Functioneel Eiwitrijk Schapenijs</p>
                 </div>
+                
                 <p class="text-lg md:text-xl font-light text-[#1A3628]/80 max-w-lg leading-relaxed">
                     Lacaune schapenijs uit Friesland. De perfecte balans tussen medische wetenschap en gastronomische verfijning.
                 </p>
+
                 <ul class="space-y-4 text-sm font-bold uppercase tracking-widest text-[#1A3628]/70">
                     <li class="flex items-center space-x-3"><span class="iconify text-[#1A3628]" data-icon="lucide:check-circle-2"></span><span>Lacaune Schapenmelk (A2-Eiwit)</span></li>
                     <li class="flex items-center space-x-3"><span class="iconify text-[#1A3628]" data-icon="lucide:check-circle-2"></span><span>Functioneel Herstel & Creatine</span></li>
                     <li class="flex items-center space-x-3"><span class="iconify text-[#1A3628]" data-icon="lucide:check-circle-2"></span><span>Fries Ambachtelijk Vakmanschap</span></li>
                 </ul>
+
                 <div class="flex flex-wrap gap-4 pt-4">
                     <a href="tel:+31640902266" class="px-8 py-4 bg-[#1A3628] text-white rounded-full text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-xl shadow-[#1A3628]/20">Start Samenwerking</a>
                     <a href="#verkooppunten" class="px-8 py-4 border border-[#1A3628]/20 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white transition-all">Bestellen</a>
                 </div>
             </div>
+
             <div class="lg:col-span-5 flex justify-center relative">
                 <div class="relative w-full max-w-[500px] animate-float reveal z-10">
                     <img src="assets/Gemini_Generated_Image_qd7xs7qd7xs7qd7x.jpg" alt="SKYLD Affogato" class="w-full h-auto rounded-[3rem] shadow-2xl border-4 border-white">
@@ -203,86 +204,98 @@
                             <tr><td class="font-bold uppercase tracking-widest text-[10px]">Basis</td><td class="font-medium text-[#1A3628]">Eiwitten (Lacaune schaap)</td><td class="text-right italic">9.8g</td></tr>
                             <tr><td class="font-bold uppercase tracking-widest text-[10px]">Boost</td><td class="font-medium text-[#1A3628]">Creatine Monohydraat</td><td class="text-right italic">3.0g</td></tr>
                             <tr><td class="font-bold uppercase tracking-widest text-[10px]">Herstel</td><td class="font-medium text-[#1A3628]">Magnesium (Citraat)</td><td class="text-right italic">150mg</td></tr>
+                            <tr><td class="font-bold uppercase tracking-widest text-[10px]">Zorg</td><td class="font-medium text-[#1A3628]">Vitamines D, K & E</td><td class="text-right italic text-xs uppercase tracking-tighter">Optimaal</td></tr>
                         </table>
                     </div>
                 </div>
-                <div class="relative hidden lg:block"><img src="assets/hero-cup.png" alt="SKYLD Cup" class="w-full h-auto cup-render"></div>
+                <div class="relative hidden lg:block">
+                     <img src="assets/hero-cup.png" alt="SKYLD Cup" class="w-full h-auto cup-render">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recepten" class="py-32 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 text-center">
+            <div class="flex flex-col items-center transition-transform duration-500 hover:scale-105">
+                <div class="recipe-bubble w-64 h-64 rounded-full overflow-hidden border-8 border-white shadow-xl relative z-10">
+                    <img src="assets/Gemini_Generated_Image_ahhuowahhuowahhu.jpg" class="w-full h-full object-cover">
+                </div>
+                <div class="mt-[-30px] bg-white p-8 rounded-2xl shadow-lg border border-[#1A3628]/5 max-w-[280px] relative z-20 receipt-jagged pt-12">
+                    <h3 class="font-serif text-2xl mb-2 text-[#1A3628]">Apple Crumble</h3>
+                    <p class="text-xs text-[#1A3628]/60 italic uppercase tracking-widest">Gastronomisch</p>
+                </div>
+            </div>
+            <div class="flex flex-col items-center transition-transform duration-500 hover:scale-105">
+                <div class="recipe-bubble w-64 h-64 rounded-full overflow-hidden border-8 border-white shadow-xl relative z-10">
+                    <img src="assets/Gemini_Generated_Image_qd7xs7qd7xs7qd7x.jpg" class="w-full h-full object-cover">
+                </div>
+                <div class="mt-[-30px] bg-white p-8 rounded-2xl shadow-lg border border-[#1A3628]/5 max-w-[280px] relative z-20 receipt-jagged pt-12">
+                    <h3 class="font-serif text-2xl mb-2 text-[#1A3628]">Ultieme Affogato</h3>
+                    <p class="text-xs text-[#1A3628]/60 italic uppercase tracking-widest">De nieuwe standaard</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="verkooppunten" class="py-32 relative overflow-hidden bg-[#FDFBF7] z-10 border-t border-[#1A3628]/5">
-        <div class="max-w-7xl mx-auto px-6 mb-20 text-center">
+        <div class="max-w-7xl mx-auto px-6 mb-20 text-center relative z-20">
             <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-[#1A3628]/40 mb-4 block">Onze Partners</span>
             <h2 class="font-serif text-5xl md:text-7xl text-[#1A3628] mb-6">Ambassadeurs van Smaak</h2>
-            <p class="text-xl text-[#1A3628]/60 font-light italic max-w-2xl mx-auto">Vind SKYLD Performance Food bij de beste boerderijwinkels in Friesland en omstreken.</p>
+            <p class="text-xl text-[#1A3628]/60 font-light italic max-w-2xl mx-auto">Vind SKYLD bij de beste boerderijwinkels in Friesland en omstreken.</p>
         </div>
 
-        <div class="hidden lg:block max-w-6xl mx-auto map-container p-20 relative">
-            <div class="relative min-h-[750px] w-full flex items-center justify-center">
-                <div class="absolute inset-0 flex justify-center items-center opacity-[0.04] pointer-events-none">
-                    <span class="iconify text-[850px]" data-icon="gis:map-netherlands"></span>
-                </div>
+        <div class="hidden lg:block max-w-6xl mx-auto map-container p-20 relative min-h-[850px]">
+            
+            <div class="absolute inset-0 flex justify-center items-center pointer-events-none opacity-[0.08]">
+                <svg viewBox="0 0 500 500" class="w-[900px] h-[900px] fill-[#1A3628]">
+                    <path d="M350,50 C380,50 420,80 450,120 C480,160 460,250 440,300 C420,350 380,420 300,450 C220,480 150,450 100,400 C50,350 40,250 80,150 C120,50 250,30 350,50 Z" />
+                </svg>
+            </div>
 
-                <div class="absolute top-[5%] left-[75%] group">
-                    <div class="shop-blob animate-pulse-subtle"><img src="assets/logo-boltahus.png" alt="Boltahus"></div>
-                    <div class="shop-tooltip">Boerderij Boltahus — Anjum</div>
-                </div>
+            <div class="absolute top-[10%] left-[72%] group z-30">
+                <div class="shop-blob animate-pulse-subtle"><img src="assets/logo-boltahus.png" alt="Anjum"></div>
+                <div class="shop-tooltip">Boerderij Boltahus — Anjum</div>
+            </div>
 
-                <div class="absolute top-[20%] left-[82%] group">
-                    <div class="shop-blob"><img src="assets/logo-uitland.png" alt="Uitland"></div>
-                    <div class="shop-tooltip">Boerderijwinkel Uitland — Buitenpost</div>
-                </div>
-                <div class="absolute top-[28%] left-[78%] group">
-                    <div class="shop-blob"><img src="assets/logo-opestal.png" alt="Op e Stal"></div>
-                    <div class="shop-tooltip">Op e Stâl — Buitenpost</div>
-                </div>
+            <div class="absolute top-[22%] left-[78%] group z-30">
+                <div class="shop-blob"><img src="assets/logo-uitland.png" alt="Buitenpost"></div>
+                <div class="shop-tooltip">Boerderijwinkel Uitland — Buitenpost</div>
+            </div>
 
-                <div class="absolute top-[50%] left-[65%] group">
-                    <div class="shop-blob"><img src="assets/logo-dedeelen.png" alt="De Deelen"></div>
-                    <div class="shop-tooltip">Kaasboerderij De Deelen — Tijnje</div>
-                </div>
-                <div class="absolute top-[58%] left-[60%] group">
-                    <div class="shop-blob"><img src="assets/logo-degelder.png" alt="De Gelder"></div>
-                    <div class="shop-tooltip">De Gelder — Tijnje</div>
-                </div>
+            <div class="absolute top-[48%] left-[62%] group z-30">
+                <div class="shop-blob"><img src="assets/logo-dedeelen.png" alt="Tijnje"></div>
+                <div class="shop-tooltip">De Deelen — Tijnje</div>
+            </div>
 
-                <div class="absolute top-[55%] left-[25%] group">
-                    <div class="shop-blob"><img src="assets/logo-sneek.png" alt="Sneek"></div>
-                    <div class="shop-tooltip">Plattelanswinkeltje — Sneek</div>
-                </div>
-                <div class="absolute top-[65%] left-[20%] group">
-                    <div class="shop-blob"><img src="assets/logo-ijlst.png" alt="IJlst"></div>
-                    <div class="shop-tooltip">Wylde Boerinne — IJlst</div>
-                </div>
-                <div class="absolute top-[35%] left-[15%] group">
-                    <div class="shop-blob"><img src="assets/logo-arum.png" alt="Arum"></div>
-                    <div class="shop-tooltip">Boerderijshop — Arum</div>
-                </div>
+            <div class="absolute top-[52%] left-[32%] group z-30">
+                <div class="shop-blob"><img src="assets/logo-sneek.png" alt="Sneek"></div>
+                <div class="shop-tooltip">Plattelanswinkeltje — Sneek</div>
+            </div>
 
-                <div class="absolute top-[85%] left-[58%] group">
-                    <div class="shop-blob"><img src="assets/logo-munnekeburen.png" alt="Munnekeburen"></div>
-                    <div class="shop-tooltip">'t Verst — Munnekeburen</div>
-                </div>
-                <div class="absolute top-[75%] left-[68%] group">
-                    <div class="shop-blob"><img src="assets/logo-katlijk.png" alt="Katlijk"></div>
-                    <div class="shop-tooltip">Streekwinkel — Katlijk</div>
-                </div>
+            <div class="absolute top-[32%] left-[22%] group z-30">
+                <div class="shop-blob"><img src="assets/logo-arum.png" alt="Arum"></div>
+                <div class="shop-tooltip">Boerderijshop — Arum</div>
+            </div>
 
-                <div class="absolute top-[92%] left-[30%] group">
-                    <div class="shop-blob"><img src="assets/logo-lelystad.png" alt="Lelystad"></div>
-                    <div class="shop-tooltip">Polderversenlekker — Lelystad</div>
-                </div>
+            <div class="absolute top-[82%] left-[55%] group z-30">
+                <div class="shop-blob"><img src="assets/logo-munnekeburen.png" alt="Munnekeburen"></div>
+                <div class="shop-tooltip">'t Verst — Munnekeburen</div>
+            </div>
+
+            <div class="absolute top-[92%] left-[35%] group z-30">
+                <div class="shop-blob"><img src="assets/logo-lelystad.png" alt="Lelystad"></div>
+                <div class="shop-tooltip">Polderversenlekker — Lelystad</div>
             </div>
         </div>
 
         <div class="lg:hidden flex overflow-hidden py-24 bg-white/30 backdrop-blur-sm border-y border-[#1A3628]/5">
-            <div class="flex space-x-12 animate-marquee">
+            <div class="flex animate-marquee">
                 <img src="assets/logo-boltahus.png" class="mobile-logo-float">
                 <img src="assets/logo-dedeelen.png" class="mobile-logo-float">
                 <img src="assets/logo-uitland.png" class="mobile-logo-float">
                 <img src="assets/logo-sneek.png" class="mobile-logo-float">
-                <img src="assets/logo-katlijk.png" class="mobile-logo-float">
+                <img src="assets/logo-arum.png" class="mobile-logo-float">
                 <img src="assets/logo-boltahus.png" class="mobile-logo-float">
                 <img src="assets/logo-dedeelen.png" class="mobile-logo-float">
             </div>
@@ -292,13 +305,34 @@
     <footer class="bg-white pt-32 pb-12 border-t border-[#1A3628]/5 relative z-10 text-center">
         <div class="max-w-4xl mx-auto px-6 mb-24">
             <h2 class="font-serif text-5xl md:text-6xl mb-6 text-[#1A3628]">Ervaar de Revolutie</h2>
+            <p class="text-lg text-[#1A3628]/60 font-light mb-12 italic">Wilt u SKYLD ijs serveren of opnemen in uw assortiment?</p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12">
-                <a href="tel:+31640902266" class="w-full sm:w-64 flex items-center justify-center space-x-3 px-8 py-5 bg-[#1A3628] text-white rounded-2xl shadow-xl hover:brightness-110 transition-all"><span class="iconify text-xl" data-icon="lucide:phone"></span><span class="font-bold uppercase tracking-[0.2em] text-xs">Bellen</span></a>
-                <a href="https://wa.me/31640902266" class="w-full sm:w-64 flex items-center justify-center space-x-3 px-8 py-5 bg-white border-2 border-[#1A3628] text-[#1A3628] rounded-2xl hover:bg-[#FDFBF7] transition-all"><span class="iconify text-xl" data-icon="lucide:message-circle"></span><span class="font-bold uppercase tracking-[0.2em] text-xs">Appen</span></a>
+                <a href="tel:+31640902266" class="w-full sm:w-64 flex items-center justify-center space-x-3 px-8 py-5 bg-[#1A3628] text-white rounded-2xl shadow-xl hover:brightness-110 transition-all">
+                    <span class="iconify text-xl" data-icon="lucide:phone"></span>
+                    <span class="font-bold uppercase tracking-[0.2em] text-xs">Bellen</span>
+                </a>
+                <a href="https://wa.me/31640902266" class="w-full sm:w-64 flex items-center justify-center space-x-3 px-8 py-5 bg-white border-2 border-[#1A3628] text-[#1A3628] rounded-2xl hover:bg-[#FDFBF7] transition-all">
+                    <span class="iconify text-xl" data-icon="lucide:message-circle"></span>
+                    <span class="font-bold uppercase tracking-[0.2em] text-xs">Appen</span>
+                </a>
             </div>
         </div>
+
+        <div class="mb-24 px-6">
+            <span class="text-[10px] font-bold uppercase tracking-[0.5em] text-[#1A3628]/30 block mb-12">Ondersteund door</span>
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24">
+                <img src="assets/Flag_of_Europe.svg" alt="EU" class="h-10 w-auto partner-logo">
+                <img src="assets/Logo_Versnellingsagenda_los_smal_transparant.png.webp" alt="VA" class="h-10 w-auto partner-logo">
+                <img src="assets/SNN_logo_naamvoluit_CMYK_png.png" alt="SNN" class="h-12 w-auto partner-logo">
+            </div>
+        </div>
+
         <div class="flex flex-col items-center space-y-8 pt-8 border-t border-[#1A3628]/5">
-            <div class="flex flex-col items-center"><img src="assets/skyld-logo.png" alt="SKYLD" class="h-12 w-auto logo-color-filter"><span class="font-serif text-3xl tracking-tighter mt-2 text-[#1A3628]">ijs</span></div>
+            <div class="flex flex-col items-center">
+                <img src="assets/skyld-logo.png" alt="SKYLD" class="h-12 w-auto logo-color-filter">
+                <span class="font-serif text-3xl tracking-tighter mt-2 text-[#1A3628]">ijs</span>
+            </div>
+            <p class="text-[#1A3628]/60 font-medium italic opacity-80">Luxwoude, Friesland</p>
             <p class="text-[9px] text-[#1A3628]/30 uppercase tracking-[0.3em]">© 2026 SKYLD PERFORMANCE FOOD</p>
         </div>
     </footer>
