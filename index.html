@@ -30,8 +30,20 @@
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        @keyframes pulse-subtle {
+            0% { box-shadow: 0 0 0 0 rgba(26, 54, 40, 0.2); }
+            70% { box-shadow: 0 0 0 15px rgba(26, 54, 40, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(26, 54, 40, 0); }
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
         .animate-float { animation: float-slow 8s ease-in-out infinite; }
         .reveal { animation: fade-in-up 1.2s ease-out forwards; }
+        .animate-pulse-subtle { animation: pulse-subtle 3s infinite; }
+        .animate-marquee { display: flex; width: fit-content; animation: marquee 40s linear infinite; }
 
         .cup-render {
             mix-blend-mode: multiply;
@@ -63,6 +75,36 @@
             border-bottom: 1px solid rgba(26, 54, 40, 0.08);
         }
 
+        /* Shop Blobs Style */
+        .shop-blob {
+            width: 3rem;
+            height: 3rem;
+            background: white;
+            border-radius: 9999px;
+            border: 3px solid white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+        }
+        .shop-blob img { width: 100%; height: 100%; object-fit: cover; }
+        .group:hover .shop-blob { transform: scale(3.5); z-index: 50; box-shadow: 0 25px 50px -12px rgba(26, 54, 40, 0.25); }
+
+        .shop-tooltip {
+            position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+            margin-top: 2rem; background: #1A3628; color: white; font-size: 10px;
+            font-weight: 700; letter-spacing: 0.05em; padding: 0.5rem 1rem;
+            border-radius: 9999px; opacity: 0; pointer-events: none;
+            transition: all 0.4s ease; white-space: nowrap; z-index: 100;
+        }
+        .group:hover .shop-tooltip { opacity: 1; transform: translateX(-50%) translateY(1rem); }
+
+        .mobile-logo-float {
+            height: 5rem; width: 5rem; border-radius: 9999px; background: white;
+            padding: 0.5rem; border: 1px solid rgba(26, 54, 40, 0.05);
+            object-fit: contain; animation: float-slow 6s ease-in-out infinite;
+        }
+
         h1, h2, h3 { letter-spacing: -0.03em; }
     </style>
 </head>
@@ -79,7 +121,7 @@
             <div class="hidden md:flex items-center space-x-12 text-[11px] font-bold uppercase tracking-[0.2em] text-[#1A3628]/70">
                 <a href="#wetenschap" class="hover:text-[#1A3628] transition-colors">Wetenschap</a>
                 <a href="#recepten" class="hover:text-[#1A3628] transition-colors">Inspiratie</a>
-                <a href="#partners" class="hover:text-[#1A3628] transition-colors">Distributie</a>
+                <a href="#verkooppunten" class="hover:text-[#1A3628] transition-colors">Distributie</a>
             </div>
             <div class="flex items-center space-x-6 relative z-10">
                 <a href="https://wa.me/31640902266" class="hidden lg:flex items-center space-x-2 text-[10px] font-bold uppercase tracking-widest text-[#1A3628]/60 hover:text-[#1A3628] transition-all">
@@ -125,7 +167,7 @@
 
                 <div class="flex flex-wrap gap-4 pt-4">
                     <a href="tel:+31640902266" class="px-8 py-4 bg-[#1A3628] text-white rounded-full text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-xl shadow-[#1A3628]/20">Start Samenwerking</a>
-                    <a href="#partners" class="px-8 py-4 border border-[#1A3628]/20 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white transition-all">Bestellen</a>
+                    <a href="#verkooppunten" class="px-8 py-4 border border-[#1A3628]/20 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white transition-all">Bestellen</a>
                 </div>
             </div>
 
@@ -186,7 +228,7 @@
         </div>
     </section>
 
-    <section id="recepten" class="py-32 relative">
+    <section id="recepten" class="py-32 relative z-10">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
             <div class="flex flex-col items-center transition-transform duration-500 hover:scale-105">
                 <div class="recipe-bubble w-64 h-64 rounded-full overflow-hidden border-8 border-white shadow-xl relative z-10">
@@ -208,83 +250,74 @@
             </div>
         </div>
     </section>
-<section id="verkooppunten" class="py-32 relative overflow-hidden bg-[#FDFBF7] z-10">
-    <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
-        <h2 class="font-serif text-5xl md:text-6xl text-[#1A3628] mb-4">Vind SKYLD bij jou in de buurt</h2>
-        <p class="text-lg text-[#1A3628]/60 font-light italic">Verkrijgbaar bij geselecteerde boerderijwinkels en speciaalzaken.</p>
-    </div>
 
-    <div class="hidden lg:flex justify-center items-center relative min-h-[700px] max-w-5xl mx-auto">
-        <div class="absolute inset-0 flex justify-center items-center opacity-10 -z-10">
-            <span class="iconify text-[600px]" data-icon="gis:map-netherlands"></span>
+    <section id="verkooppunten" class="py-32 relative overflow-hidden bg-[#FDFBF7] z-10 border-t border-[#1A3628]/5">
+        <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
+            <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-[#1A3628]/40 mb-4 block">Lokaal & Vers</span>
+            <h2 class="font-serif text-5xl md:text-6xl text-[#1A3628] mb-4">Vind SKYLD bij jou in de buurt</h2>
+            <p class="text-lg text-[#1A3628]/60 font-light italic">Verkrijgbaar bij geselecteerde boerderijwinkels en speciaalzaken.</p>
         </div>
 
-        <div class="absolute top-[10%] left-[70%] group">
-            <div class="w-12 h-12 rounded-full border-4 border-white bg-white shadow-lg overflow-hidden transition-all duration-500 hover:scale-[3] hover:z-50 cursor-pointer">
-                <img src="assets/logo-boltahus.png" alt="Boltahus" class="w-full h-full object-cover">
+        <div class="hidden lg:flex justify-center items-center relative min-h-[800px] max-w-5xl mx-auto">
+            <div class="absolute inset-0 flex justify-center items-center opacity-[0.07] -z-10">
+                <span class="iconify text-[750px]" data-icon="gis:map-netherlands"></span>
             </div>
-            <div class="absolute top-full mt-4 left-1/2 -translate-x-1/2 bg-[#1A3628] text-white text-[10px] px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                Boerderij Boltahus, Anjum
+
+            <div class="absolute top-[8%] left-[72%] group z-20">
+                <div class="shop-blob animate-pulse-subtle"><img src="assets/logo-boltahus.png" alt="Anjum"></div>
+                <div class="shop-tooltip">Boerderij Boltahus, Anjum</div>
+            </div>
+            <div class="absolute top-[22%] left-[76%] group z-20">
+                <div class="shop-blob"><img src="assets/logo-uitland.png" alt="Buitenpost"></div>
+                <div class="shop-tooltip">Boerderijwinkel Uitland, Buitenpost</div>
+            </div>
+
+            <div class="absolute top-[28%] left-[22%] group z-20">
+                <div class="shop-blob"><img src="assets/logo-arum.png" alt="Arum"></div>
+                <div class="shop-tooltip">Boerderijshop, Arum</div>
+            </div>
+            <div class="absolute top-[52%] left-[32%] group z-20">
+                <div class="shop-blob"><img src="assets/logo-sneek.png" alt="Sneek"></div>
+                <div class="shop-tooltip">'t Plattelanswinkeltje, Sneek</div>
+            </div>
+
+            <div class="absolute top-[48%] left-[62%] group z-20">
+                <div class="shop-blob"><img src="assets/logo-dedeelen.png" alt="Tijnje"></div>
+                <div class="shop-tooltip">De Deelen, Tijnje</div>
+            </div>
+            <div class="absolute top-[62%] left-[52%] group z-20">
+                <div class="shop-blob"><img src="assets/logo-joure.png" alt="Joure"></div>
+                <div class="shop-tooltip">Hof en Hiem, Joure</div>
+            </div>
+
+            <div class="absolute top-[85%] left-[48%] group z-20">
+                <div class="shop-blob"><img src="assets/logo-rutten.png" alt="Rutten"></div>
+                <div class="shop-tooltip">Gernell, Rutten</div>
+            </div>
+            <div class="absolute top-[95%] left-[35%] group z-20">
+                <div class="shop-blob"><img src="assets/logo-lelystad.png" alt="Lelystad"></div>
+                <div class="shop-tooltip">Polderversenlekker, Lelystad</div>
             </div>
         </div>
 
-        <div class="absolute top-[25%] left-[75%] group">
-            <div class="w-12 h-12 rounded-full border-4 border-white bg-white shadow-lg overflow-hidden transition-all duration-500 hover:scale-[3] hover:z-50 cursor-pointer">
-                <img src="assets/logo-uitland.png" alt="Uitland" class="w-full h-full object-cover">
-            </div>
-            <div class="absolute top-full mt-4 left-1/2 -translate-x-1/2 bg-[#1A3628] text-white text-[10px] px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                Uitland, Buitenpost
-            </div>
-        </div>
-
-        <div class="absolute top-[45%] left-[55%] group">
-            <div class="w-12 h-12 rounded-full border-4 border-white bg-white shadow-lg overflow-hidden transition-all duration-500 hover:scale-[3] hover:z-50 cursor-pointer">
-                <img src="assets/logo-dedeelen.png" alt="De Deelen" class="w-full h-full object-cover">
-            </div>
-            <div class="absolute top-full mt-4 left-1/2 -translate-x-1/2 bg-[#1A3628] text-white text-[10px] px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                De Deelen, Tijnje
+        <div class="lg:hidden flex overflow-hidden py-20 relative">
+            <div class="flex space-x-8 animate-marquee whitespace-nowrap">
+                <img src="assets/logo-boltahus.png" class="mobile-logo-float">
+                <img src="assets/logo-uitland.png" class="mobile-logo-float">
+                <img src="assets/logo-dedeelen.png" class="mobile-logo-float">
+                <img src="assets/logo-sneek.png" class="mobile-logo-float">
+                <img src="assets/logo-arum.png" class="mobile-logo-float">
+                <img src="assets/logo-boltahus.png" class="mobile-logo-float">
+                <img src="assets/logo-uitland.png" class="mobile-logo-float">
             </div>
         </div>
+    </section>
 
-        <div class="absolute top-[50%] left-[30%] group">
-            <div class="w-12 h-12 rounded-full border-4 border-white bg-white shadow-lg overflow-hidden transition-all duration-500 hover:scale-[3] hover:z-50 cursor-pointer">
-                <img src="assets/logo-sneek.png" alt="Sneek" class="w-full h-full object-cover">
-            </div>
-            <div class="absolute top-full mt-4 left-1/2 -translate-x-1/2 bg-[#1A3628] text-white text-[10px] px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                Plattelanswinkeltje, Sneek
-            </div>
-        </div>
-    </div>
-
-    <div class="lg:hidden flex overflow-hidden py-10">
-        <div class="flex space-x-12 animate-marquee whitespace-nowrap">
-            <img src="assets/logo-boltahus.png" class="h-20 w-20 rounded-full border-2 border-[#1A3628]/10 p-1 object-contain bg-white">
-            <img src="assets/logo-uitland.png" class="h-20 w-20 rounded-full border-2 border-[#1A3628]/10 p-1 object-contain bg-white">
-            <img src="assets/logo-dedeelen.png" class="h-20 w-20 rounded-full border-2 border-[#1A3628]/10 p-1 object-contain bg-white">
-            <img src="assets/logo-sneek.png" class="h-20 w-20 rounded-full border-2 border-[#1A3628]/10 p-1 object-contain bg-white">
-            <img src="assets/logo-boltahus.png" class="h-20 w-20 rounded-full border-2 border-[#1A3628]/10 p-1 object-contain bg-white">
-            <img src="assets/logo-uitland.png" class="h-20 w-20 rounded-full border-2 border-[#1A3628]/10 p-1 object-contain bg-white">
-        </div>
-    </div>
-</section>
-
-<style>
-    @keyframes marquee {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-    }
-    .animate-marquee {
-        display: flex;
-        width: 200%;
-        animation: marquee 30s linear infinite;
-    }
-</style>
     <footer class="bg-white pt-32 pb-12 border-t border-[#1A3628]/5 relative z-10">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="max-w-4xl mx-auto mb-24">
                 <h2 class="font-serif text-5xl md:text-6xl mb-6 text-[#1A3628]">Ervaar de Revolutie</h2>
                 <p class="text-lg text-[#1A3628]/60 font-light mb-12">Wilt u SKYLD ijs serveren of opnemen in uw assortiment?</p>
-                
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
                     <a href="tel:+31640902266" class="w-full sm:w-64 flex items-center justify-center space-x-3 px-8 py-5 bg-[#1A3628] text-white rounded-2xl shadow-xl hover:brightness-110 transition-all">
                         <span class="iconify text-xl" data-icon="lucide:phone"></span>
