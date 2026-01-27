@@ -208,7 +208,77 @@
             </div>
         </div>
     </section>
+<section id="verkooppunten" class="py-32 relative overflow-hidden bg-[#FDFBF7] z-10">
+    <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
+        <h2 class="font-serif text-5xl md:text-6xl text-[#1A3628] mb-4">Vind SKYLD bij jou in de buurt</h2>
+        <p class="text-lg text-[#1A3628]/60 font-light italic">Verkrijgbaar bij geselecteerde boerderijwinkels en speciaalzaken.</p>
+    </div>
 
+    <div class="hidden lg:flex justify-center items-center relative min-h-[700px] max-w-5xl mx-auto">
+        <div class="absolute inset-0 flex justify-center items-center opacity-10 -z-10">
+            <span class="iconify text-[600px]" data-icon="gis:map-netherlands"></span>
+        </div>
+
+        <div class="absolute top-[10%] left-[70%] group">
+            <div class="w-12 h-12 rounded-full border-4 border-white bg-white shadow-lg overflow-hidden transition-all duration-500 hover:scale-[3] hover:z-50 cursor-pointer">
+                <img src="assets/logo-boltahus.png" alt="Boltahus" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute top-full mt-4 left-1/2 -translate-x-1/2 bg-[#1A3628] text-white text-[10px] px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                Boerderij Boltahus, Anjum
+            </div>
+        </div>
+
+        <div class="absolute top-[25%] left-[75%] group">
+            <div class="w-12 h-12 rounded-full border-4 border-white bg-white shadow-lg overflow-hidden transition-all duration-500 hover:scale-[3] hover:z-50 cursor-pointer">
+                <img src="assets/logo-uitland.png" alt="Uitland" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute top-full mt-4 left-1/2 -translate-x-1/2 bg-[#1A3628] text-white text-[10px] px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                Uitland, Buitenpost
+            </div>
+        </div>
+
+        <div class="absolute top-[45%] left-[55%] group">
+            <div class="w-12 h-12 rounded-full border-4 border-white bg-white shadow-lg overflow-hidden transition-all duration-500 hover:scale-[3] hover:z-50 cursor-pointer">
+                <img src="assets/logo-dedeelen.png" alt="De Deelen" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute top-full mt-4 left-1/2 -translate-x-1/2 bg-[#1A3628] text-white text-[10px] px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                De Deelen, Tijnje
+            </div>
+        </div>
+
+        <div class="absolute top-[50%] left-[30%] group">
+            <div class="w-12 h-12 rounded-full border-4 border-white bg-white shadow-lg overflow-hidden transition-all duration-500 hover:scale-[3] hover:z-50 cursor-pointer">
+                <img src="assets/logo-sneek.png" alt="Sneek" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute top-full mt-4 left-1/2 -translate-x-1/2 bg-[#1A3628] text-white text-[10px] px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                Plattelanswinkeltje, Sneek
+            </div>
+        </div>
+    </div>
+
+    <div class="lg:hidden flex overflow-hidden py-10">
+        <div class="flex space-x-12 animate-marquee whitespace-nowrap">
+            <img src="assets/logo-boltahus.png" class="h-20 w-20 rounded-full border-2 border-[#1A3628]/10 p-1 object-contain bg-white">
+            <img src="assets/logo-uitland.png" class="h-20 w-20 rounded-full border-2 border-[#1A3628]/10 p-1 object-contain bg-white">
+            <img src="assets/logo-dedeelen.png" class="h-20 w-20 rounded-full border-2 border-[#1A3628]/10 p-1 object-contain bg-white">
+            <img src="assets/logo-sneek.png" class="h-20 w-20 rounded-full border-2 border-[#1A3628]/10 p-1 object-contain bg-white">
+            <img src="assets/logo-boltahus.png" class="h-20 w-20 rounded-full border-2 border-[#1A3628]/10 p-1 object-contain bg-white">
+            <img src="assets/logo-uitland.png" class="h-20 w-20 rounded-full border-2 border-[#1A3628]/10 p-1 object-contain bg-white">
+        </div>
+    </div>
+</section>
+
+<style>
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+        display: flex;
+        width: 200%;
+        animation: marquee 30s linear infinite;
+    }
+</style>
     <footer class="bg-white pt-32 pb-12 border-t border-[#1A3628]/5 relative z-10">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="max-w-4xl mx-auto mb-24">
