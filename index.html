@@ -21,16 +21,16 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
         }
 
-        /* Oneindige verticale scroll voor de filmrol */
+        /* Oneindige verticale scroll voor de logo carrousel */
         @keyframes scroll-vertical {
             0% { transform: translateY(0); }
             100% { transform: translateY(-50%); }
         }
         .animate-vertical-loop {
-            animation: scroll-vertical 30s linear infinite;
+            animation: scroll-vertical 20s linear infinite;
         }
 
-        /* Subtiele zweef-animatie voor de recepten in de footer */
+        /* Zweef-animatie voor de recepten in de footer */
         @keyframes float-recept {
             0%, 100% { transform: translateY(0) rotate(0deg); }
             50% { transform: translateY(-15px) rotate(2deg); }
@@ -41,17 +41,16 @@
             filter: brightness(0) saturate(100%) invert(16%) sepia(18%) saturate(1062%) hue-rotate(101deg) brightness(95%) contrast(92%);
         }
 
-        .partner-logo {
-            filter: grayscale(1) opacity(0.4);
-            transition: all 0.4s ease-in-out;
+        .partner-logo-bw {
+            filter: grayscale(1) contrast(0.8) opacity(0.6);
+            transition: all 0.4s ease;
         }
-        .partner-logo:hover {
-            filter: grayscale(0) opacity(1);
-            transform: scale(1.1);
+        .partner-logo-bw:hover {
+            filter: grayscale(0) contrast(1) opacity(1);
         }
 
         .nutrition-table td {
-            padding: 1.25rem 0;
+            padding: 1.5rem 0;
             border-bottom: 1px solid rgba(26, 54, 40, 0.08);
         }
 
@@ -62,17 +61,17 @@
             background-repeat: repeat-x;
         }
 
-        h1, h2, h3 { letter-spacing: -0.03em; }
+        h1, h2, h3 { letter-spacing: -0.02em; }
     </style>
 </head>
 <body class="bg-[#FDFBF7] text-[#1A3628] font-sans antialiased relative">
 
     <div class="fixed inset-0 pointer-events-none z-[1] bg-noise opacity-60 mix-blend-multiply"></div>
 
-    <nav class="fixed top-0 w-full z-50 transition-all duration-500 backdrop-blur-xl bg-[#FDFBF7]/80 border-b border-[#1A3628]/5">
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-[#FDFBF7]/80 border-b border-[#1A3628]/5">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="#" class="flex items-center group relative z-10">
-                <img src="assets/skyld-logo.png" alt="SKYLD" class="h-10 w-auto logo-color-filter transition-transform group-hover:scale-105">
+                <img src="assets/skyld-logo.png" alt="SKYLD" class="h-10 w-auto logo-color-filter">
                 <span class="font-serif text-2xl tracking-tighter ml-2 mt-1">ijs</span>
             </a>
             <div class="hidden md:flex items-center space-x-12 text-[11px] font-bold uppercase tracking-[0.2em] text-[#1A3628]/70">
@@ -80,7 +79,7 @@
                 <a href="#partners" class="hover:text-[#1A3628] transition-colors">Distributie</a>
                 <a href="#contact" class="hover:text-[#1A3628] transition-colors">Contact</a>
             </div>
-            <a href="tel:+31640902266" class="px-7 py-3 text-[11px] font-bold uppercase tracking-[0.15em] text-white bg-[#1A3628] rounded-full hover:brightness-125 transition-all shadow-lg shadow-[#1A3628]/10">
+            <a href="tel:+31640902266" class="px-7 py-3 text-[11px] font-bold uppercase tracking-[0.15em] text-white bg-[#1A3628] rounded-full shadow-lg">
                 Contact opnemen
             </a>
         </div>
@@ -97,8 +96,8 @@
                     Functioneel schapenmelk <span class="font-bold text-[#1A3628]">ijs uit Friesland.</span>
                 </p>
                 <div class="flex flex-wrap gap-4 pt-6">
-                    <a href="tel:+31640902266" class="px-8 py-4 bg-[#1A3628] text-white rounded-full text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-xl shadow-[#1A3628]/20">Start Samenwerking</a>
-                    <a href="#wetenschap" class="px-8 py-4 border border-[#1A3628]/20 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white transition-all">Ontdek de Wetenschap</a>
+                    <a href="tel:+31640902266" class="px-8 py-4 bg-[#1A3628] text-white rounded-full text-xs font-bold uppercase tracking-widest hover:brightness-110 shadow-xl shadow-[#1A3628]/20">Start Samenwerking</a>
+                    <a href="#wetenschap" class="px-8 py-4 border border-[#1A3628]/20 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white transition-all">Onze Wetenschap</a>
                 </div>
             </div>
         </div>
@@ -111,32 +110,40 @@
                 <div class="lg:col-span-4 flex flex-col justify-center space-y-6">
                     <h2 class="font-serif text-5xl text-[#1A3628]">Premium Partners</h2>
                     <div class="space-y-4">
-                        <div class="bg-[#FDFBF7] rounded-[2rem] overflow-hidden border border-[#1A3628]/5 group">
-                            <div class="h-32 overflow-hidden"><img src="assets/Gemini_Generated_Image_ywkt7bywkt7bywkt.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"></div>
+                        <div class="bg-[#FDFBF7] rounded-[2rem] overflow-hidden border border-[#1A3628]/5 group shadow-sm">
+                            <div class="h-40 overflow-hidden"><img src="assets/Gemini_Generated_Image_ywkt7bywkt7bywkt.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
                             <div class="p-6"><h3 class="font-serif text-xl text-[#1A3628]">Boerderijwinkel</h3></div>
                         </div>
-                        <div class="bg-[#FDFBF7] rounded-[2rem] overflow-hidden border border-[#1A3628]/5 group">
-                            <div class="h-32 overflow-hidden"><img src="assets/fotoaffogatokoffiezaak.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"></div>
+                        <div class="bg-[#FDFBF7] rounded-[2rem] overflow-hidden border border-[#1A3628]/5 group shadow-sm">
+                            <div class="h-40 overflow-hidden"><img src="assets/fotoaffogatokoffiezaak.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
                             <div class="p-6"><h3 class="font-serif text-xl text-[#1A3628]">Horeca Luxe</h3></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="lg:col-span-8 relative h-[600px] overflow-hidden rounded-[3rem] bg-[#FDFBF7] border border-[#1A3628]/5">
-                    <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#FDFBF7] to-transparent z-20"></div>
-                    <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#FDFBF7] to-transparent z-20"></div>
-                    <div class="animate-vertical-loop p-8 space-y-6">
-                        <div class="grid grid-cols-2 gap-6">
-                            <div class="h-64 bg-[#1A3628]/5 rounded-3xl flex items-center justify-center text-[#1A3628]/20 font-serif italic text-lg border border-[#1A3628]/5">Klant Foto 1</div>
-                            <div class="h-80 bg-[#1A3628]/10 rounded-3xl flex items-center justify-center text-[#1A3628]/20 font-serif italic text-lg border border-[#1A3628]/5">Klant Foto 2</div>
-                            <div class="h-80 bg-[#1A3628]/10 rounded-3xl flex items-center justify-center text-[#1A3628]/20 font-serif italic text-lg border border-[#1A3628]/5">Klant Foto 3</div>
-                            <div class="h-64 bg-[#1A3628]/5 rounded-3xl flex items-center justify-center text-[#1A3628]/20 font-serif italic text-lg border border-[#1A3628]/5">Klant Foto 4</div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-6 pt-6">
-                            <div class="h-64 bg-[#1A3628]/5 rounded-3xl flex items-center justify-center text-[#1A3628]/20 font-serif italic text-lg border border-[#1A3628]/5">Klant Foto 1</div>
-                            <div class="h-80 bg-[#1A3628]/10 rounded-3xl flex items-center justify-center text-[#1A3628]/20 font-serif italic text-lg border border-[#1A3628]/5">Klant Foto 2</div>
-                            <div class="h-80 bg-[#1A3628]/10 rounded-3xl flex items-center justify-center text-[#1A3628]/20 font-serif italic text-lg border border-[#1A3628]/5">Klant Foto 3</div>
-                            <div class="h-64 bg-[#1A3628]/5 rounded-3xl flex items-center justify-center text-[#1A3628]/20 font-serif italic text-lg border border-[#1A3628]/5">Klant Foto 4</div>
+                <div class="lg:col-span-8 relative h-[650px] overflow-hidden rounded-[3rem] bg-[#FDFBF7] border border-[#1A3628]/5 shadow-inner">
+                    <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#FDFBF7] to-transparent z-20"></div>
+                    <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#FDFBF7] to-transparent z-20"></div>
+                    
+                    <div class="animate-vertical-loop p-12">
+                        <div class="grid grid-cols-2 gap-12 items-center">
+                            <img src="assets/angus.png" class="w-full h-auto partner-logo-bw">
+                            <img src="assets/boltahus.jpg.png" class="w-full h-auto partner-logo-bw">
+                            <img src="assets/dedeelen.png" class="w-full h-auto partner-logo-bw">
+                            <img src="assets/feintsje.png" class="w-full h-auto partner-logo-bw">
+                            <img src="assets/katlijk.jpg" class="w-full h-auto partner-logo-bw">
+                            <img src="assets/plattelandswinkeltje.png" class="w-full h-auto partner-logo-bw">
+                            <img src="assets/ypko.jpg" class="w-full h-auto partner-logo-bw">
+                            <img src="assets/angus.png" class="w-full h-auto partner-logo-bw opacity-20"> </div>
+                        <div class="grid grid-cols-2 gap-12 items-center pt-12">
+                            <img src="assets/angus.png" class="w-full h-auto partner-logo-bw">
+                            <img src="assets/boltahus.jpg.png" class="w-full h-auto partner-logo-bw">
+                            <img src="assets/dedeelen.png" class="w-full h-auto partner-logo-bw">
+                            <img src="assets/feintsje.png" class="w-full h-auto partner-logo-bw">
+                            <img src="assets/katlijk.jpg" class="w-full h-auto partner-logo-bw">
+                            <img src="assets/plattelandswinkeltje.png" class="w-full h-auto partner-logo-bw">
+                            <img src="assets/ypko.jpg" class="w-full h-auto partner-logo-bw">
+                            <img src="assets/angus.png" class="w-full h-auto partner-logo-bw opacity-20">
                         </div>
                     </div>
                 </div>
@@ -147,11 +154,11 @@
     <section id="wetenschap" class="py-32 bg-white relative z-10">
         <div class="max-w-5xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="font-serif text-6xl md:text-7xl text-[#1A3628] mb-6 leading-tight">De Wetenschap achter <br><span class="italic font-light">Performance Food</span></h2>
-                <p class="text-xl text-[#1A3628]/70 font-light max-w-3xl mx-auto">Schapenmelk staat bekend om de superieure opneembaarheid. Onze formule is verrijkt met essentiële elementen voor fysiek herstel.</p>
+                <h2 class="font-serif text-6xl md:text-7xl text-[#1A3628] leading-tight">De Wetenschap achter <br><span class="italic font-light">Performance Food</span></h2>
+                <p class="text-xl text-[#1A3628]/70 font-light max-w-3xl mx-auto mt-6">Schapenmelk staat bekend om de superieure opneembaarheid. Onze formule is verrijkt met essentiële elementen voor optimaal fysiek herstel.</p>
             </div>
             <div class="bg-[#FDFBF7] rounded-[3rem] p-10 md:p-16 border border-[#1A3628]/10 shadow-sm relative overflow-hidden">
-                <table class="w-full nutrition-table text-lg md:text-xl">
+                <table class="w-full nutrition-table text-lg md:text-xl relative z-10">
                     <tr><td class="font-bold uppercase tracking-[0.2em] text-[10px]">Basis</td><td class="font-medium">Eiwitten (Lacaune schaap)</td><td class="text-right italic font-serif">9.8g</td></tr>
                     <tr><td class="font-bold uppercase tracking-[0.2em] text-[10px]">Boost</td><td class="font-medium">Creatine Monohydraat</td><td class="text-right italic font-serif">3.0g</td></tr>
                     <tr><td class="font-bold uppercase tracking-[0.2em] text-[10px]">Herstel</td><td class="font-medium">Magnesium (Citraat)</td><td class="text-right italic font-serif">150mg</td></tr>
@@ -161,15 +168,15 @@
         </div>
     </section>
 
-    <footer id="contact" class="bg-white pt-40 pb-12 border-t border-[#1A3628]/5 relative z-10 overflow-hidden">
+    <footer id="contact" class="bg-white pt-40 pb-16 border-t border-[#1A3628]/5 relative z-10 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 relative">
             
             <div class="absolute top-0 right-0 hidden lg:block transition-transform hover:scale-105 z-20 animate-float-recept">
                 <div class="w-56 h-56 rounded-full overflow-hidden border-8 border-white shadow-2xl">
                     <img src="assets/Gemini_Generated_Image_qd7xs7qd7xs7qd7x.jpg" class="w-full h-full object-cover">
                 </div>
-                <div class="mt-[-30px] bg-[#FDFBF7] p-5 rounded-2xl shadow-lg border border-[#1A3628]/5 text-center receipt-jagged pt-8 mx-auto w-48">
-                    <p class="font-serif text-xl text-[#1A3628]">Ultieme Affogato</p>
+                <div class="mt-[-30px] bg-[#FDFBF7] p-5 rounded-2xl shadow-lg border border-[#1A3628]/5 text-center receipt-jagged pt-8 mx-auto w-44">
+                    <p class="font-serif text-lg text-[#1A3628]">Ultieme Affogato</p>
                 </div>
             </div>
 
@@ -177,34 +184,32 @@
                 <div class="w-56 h-56 rounded-full overflow-hidden border-8 border-white shadow-2xl">
                     <img src="assets/Gemini_Generated_Image_ahhuowahhuowahhu.jpg" class="w-full h-full object-cover">
                 </div>
-                <div class="mt-[-30px] bg-[#FDFBF7] p-5 rounded-2xl shadow-lg border border-[#1A3628]/5 text-center receipt-jagged pt-8 mx-auto w-48">
-                    <p class="font-serif text-xl text-[#1A3628]">Apple Crumble</p>
+                <div class="mt-[-30px] bg-[#FDFBF7] p-5 rounded-2xl shadow-lg border border-[#1A3628]/5 text-center receipt-jagged pt-8 mx-auto w-44">
+                    <p class="font-serif text-lg text-[#1A3628]">Apple Crumble</p>
                 </div>
             </div>
 
             <div class="max-w-2xl mx-auto text-center relative z-10 pb-24">
-                <h2 class="font-serif text-5xl md:text-7xl mb-6 text-[#1A3628]">Ervaar de Revolutie</h2>
-                <p class="text-lg text-[#1A3628]/60 font-light mb-12 leading-relaxed">Wilt u SKYLD ijs serveren of opnemen in uw assortiment? Wij komen graag langs voor een proeverij.</p>
+                <h2 class="font-serif text-6xl md:text-7xl mb-6 text-[#1A3628]">Ervaar de Revolutie</h2>
+                <p class="text-lg text-[#1A3628]/60 font-light mb-12">Wilt u SKYLD ijs serveren of opnemen in uw assortiment? Wij vertellen u graag meer.</p>
                 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-                    <a href="tel:+31640902266" class="w-full sm:w-64 py-5 bg-[#1A3628] text-white rounded-2xl font-bold uppercase tracking-[0.2em] text-xs shadow-xl hover:brightness-110 transition-all">Bellen</a>
-                    <a href="https://wa.me/31640902266" class="w-full sm:w-64 py-5 border-2 border-[#1A3628] text-[#1A3628] rounded-2xl font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#FDFBF7] transition-all">WhatsApp</a>
+                    <a href="tel:+31640902266" class="w-full sm:w-64 py-5 bg-[#1A3628] text-white rounded-2xl font-bold uppercase tracking-widest text-xs shadow-xl hover:brightness-110 transition-all">Bellen</a>
+                    <a href="https://wa.me/31640902266" class="w-full sm:w-64 py-5 border-2 border-[#1A3628] text-[#1A3628] rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-[#FDFBF7] transition-all">WhatsApp</a>
                 </div>
             </div>
 
-            <div class="pt-24 pb-16 border-t border-[#1A3628]/5">
-                <span class="text-[10px] font-bold uppercase tracking-[0.5em] text-[#1A3628]/30 block text-center mb-12">Ondersteund door</span>
-                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24">
-                    <img src="assets/Flag_of_Europe.svg" alt="EU" class="h-8 w-auto partner-logo">
-                    <img src="assets/Logo_Versnellingsagenda_los_smal_transparant.png.webp" alt="VA" class="h-8 w-auto partner-logo">
-                    <img src="assets/SNN_logo_naamvoluit_CMYK_png.png" alt="SNN" class="h-10 w-auto partner-logo">
+            <div class="pt-24 border-t border-[#1A3628]/5">
+                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 grayscale opacity-40">
+                    <img src="assets/Flag_of_Europe.svg" alt="EU" class="h-8 w-auto">
+                    <img src="assets/Logo_Versnellingsagenda_los_smal_transparant.png.webp" alt="VA" class="h-8 w-auto">
+                    <img src="assets/SNN_logo_naamvoluit_CMYK_png.png" alt="SNN" class="h-10 w-auto">
                 </div>
             </div>
 
-            <div class="pt-12 flex flex-col items-center">
-                <img src="assets/skyld-logo.png" alt="SKYLD" class="h-12 w-auto logo-color-filter mb-4">
-                <p class="text-[#1A3628]/60 font-medium italic mb-2">Luxwoude, Friesland</p>
-                <p class="text-[9px] text-[#1A3628]/30 uppercase tracking-[0.4em]">© 2026 SKYLD PERFORMANCE FOOD</p>
+            <div class="pt-16 flex flex-col items-center">
+                <img src="assets/skyld-logo.png" alt="SKYLD" class="h-10 w-auto logo-color-filter mb-4">
+                <p class="text-[9px] text-[#1A3628]/30 uppercase tracking-[0.4em]">© 2026 SKYLD PERFORMANCE FOOD — LUXWOUDE</p>
             </div>
         </div>
     </footer>
