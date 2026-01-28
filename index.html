@@ -21,16 +21,16 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
         }
 
-        /* Oneindige verticale scroll voor de filmrol */
-        @keyframes scroll-vertical {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-50%); }
+        /* Horizontale slider animatie */
+        @keyframes scroll-horizontal {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
-        .animate-vertical-loop {
-            animation: scroll-vertical 30s linear infinite;
+        .animate-horizontal-loop {
+            animation: scroll-horizontal 40s linear infinite;
         }
 
-        /* Subtiele zweef-animatie voor de recepten in de footer */
+        /* Zweef-animatie voor receptkaarten */
         @keyframes float-recept {
             0%, 100% { transform: translateY(0) rotate(0deg); }
             50% { transform: translateY(-15px) rotate(2deg); }
@@ -41,18 +41,9 @@
             filter: brightness(0) saturate(100%) invert(16%) sepia(18%) saturate(1062%) hue-rotate(101deg) brightness(95%) contrast(92%);
         }
 
-        .partner-logo {
-            filter: grayscale(1) opacity(0.4);
-            transition: all 0.4s ease-in-out;
-        }
-        .partner-logo:hover {
-            filter: grayscale(0) opacity(1);
-            transform: scale(1.1);
-        }
-
         .nutrition-table td {
-            padding: 1.25rem 0;
-            border-bottom: 1px solid rgba(26, 54, 40, 0.08);
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(26, 54, 40, 0.15);
         }
 
         .receipt-jagged {
@@ -86,8 +77,8 @@
         </div>
     </nav>
 
-    <header class="relative min-h-[90vh] flex items-center pt-32 pb-20 z-10">
-        <div class="max-w-7xl mx-auto px-6 w-full">
+    <header class="relative min-h-screen flex items-center pt-32 pb-20 z-10">
+        <div class="max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 items-center">
             <div class="space-y-6">
                 <span class="text-xs font-bold uppercase tracking-[0.3em] text-[#1A3628]/40">Premium Performance Food</span>
                 <h1 class="font-serif text-6xl md:text-8xl lg:text-[9rem] leading-[0.85] text-[#1A3628]">
@@ -96,66 +87,70 @@
                 <p class="text-xl md:text-3xl font-serif italic text-[#1A3628]/60">
                     Functioneel schapenmelk <span class="font-bold text-[#1A3628]">ijs uit Friesland.</span>
                 </p>
+                <p class="text-lg text-[#1A3628]/80 max-w-lg leading-relaxed">
+                    Lacaune schapenmelk staat bekend om de superieure opneembaarheid. Onze formule is verrijkt met essentiële elementen voor fysiek herstel en mentale scherpte.
+                </p>
                 <div class="flex flex-wrap gap-4 pt-6">
                     <a href="tel:+31640902266" class="px-8 py-4 bg-[#1A3628] text-white rounded-full text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-xl shadow-[#1A3628]/20">Start Samenwerking</a>
                     <a href="#wetenschap" class="px-8 py-4 border border-[#1A3628]/20 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white transition-all">Ontdek de Wetenschap</a>
                 </div>
             </div>
+            <div class="relative flex justify-center">
+                <img src="assets/Gemini_Generated_Image_qd7xs7qd7xs7qd7x.jpg" alt="SKYLD Affogato" class="w-full max-w-md h-auto rounded-[3rem] shadow-2xl border-4 border-white rotate-3">
+            </div>
         </div>
     </header>
 
-    <section id="partners" class="py-24 bg-white relative z-10 border-y border-[#1A3628]/5">
+    <section id="partners" class="py-24 bg-white relative z-10">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-12 gap-12 items-stretch">
-                
-                <div class="lg:col-span-4 flex flex-col justify-center space-y-6">
-                    <h2 class="font-serif text-5xl text-[#1A3628]">Premium Partners</h2>
-                    <div class="space-y-4">
-                        <div class="bg-[#FDFBF7] rounded-[2rem] overflow-hidden border border-[#1A3628]/5 group">
-                            <div class="h-32 overflow-hidden"><img src="assets/Gemini_Generated_Image_ywkt7bywkt7bywkt.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"></div>
-                            <div class="p-6"><h3 class="font-serif text-xl text-[#1A3628]">Boerderijwinkel</h3></div>
-                        </div>
-                        <div class="bg-[#FDFBF7] rounded-[2rem] overflow-hidden border border-[#1A3628]/5 group">
-                            <div class="h-32 overflow-hidden"><img src="assets/fotoaffogatokoffiezaak.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"></div>
-                            <div class="p-6"><h3 class="font-serif text-xl text-[#1A3628]">Horeca Luxe</h3></div>
-                        </div>
-                    </div>
+            <h2 class="font-serif text-5xl text-[#1A3628] mb-12 text-center">Premium Partners</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-[#FDFBF7] rounded-[2.5rem] overflow-hidden border border-[#1A3628]/5 shadow-sm group">
+                    <div class="h-64 overflow-hidden"><img src="assets/Gemini_Generated_Image_ywkt7bywkt7bywkt.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                    <div class="p-8"><h3 class="font-serif text-3xl text-[#1A3628]">Boerderijwinkel</h3></div>
                 </div>
-
-                <div class="lg:col-span-8 relative h-[600px] overflow-hidden rounded-[3rem] bg-[#FDFBF7] border border-[#1A3628]/5">
-                    <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#FDFBF7] to-transparent z-20"></div>
-                    <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#FDFBF7] to-transparent z-20"></div>
-                    <div class="animate-vertical-loop p-8 space-y-6">
-                        <div class="grid grid-cols-2 gap-6">
-                            <div class="h-64 bg-[#1A3628]/5 rounded-3xl flex items-center justify-center text-[#1A3628]/20 font-serif italic text-lg border border-[#1A3628]/5">Klant Foto 1</div>
-                            <div class="h-80 bg-[#1A3628]/10 rounded-3xl flex items-center justify-center text-[#1A3628]/20 font-serif italic text-lg border border-[#1A3628]/5">Klant Foto 2</div>
-                            <div class="h-80 bg-[#1A3628]/10 rounded-3xl flex items-center justify-center text-[#1A3628]/20 font-serif italic text-lg border border-[#1A3628]/5">Klant Foto 3</div>
-                            <div class="h-64 bg-[#1A3628]/5 rounded-3xl flex items-center justify-center text-[#1A3628]/20 font-serif italic text-lg border border-[#1A3628]/5">Klant Foto 4</div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-6 pt-6">
-                            <div class="h-64 bg-[#1A3628]/5 rounded-3xl flex items-center justify-center text-[#1A3628]/20 font-serif italic text-lg border border-[#1A3628]/5">Klant Foto 1</div>
-                            <div class="h-80 bg-[#1A3628]/10 rounded-3xl flex items-center justify-center text-[#1A3628]/20 font-serif italic text-lg border border-[#1A3628]/5">Klant Foto 2</div>
-                            <div class="h-80 bg-[#1A3628]/10 rounded-3xl flex items-center justify-center text-[#1A3628]/20 font-serif italic text-lg border border-[#1A3628]/5">Klant Foto 3</div>
-                            <div class="h-64 bg-[#1A3628]/5 rounded-3xl flex items-center justify-center text-[#1A3628]/20 font-serif italic text-lg border border-[#1A3628]/5">Klant Foto 4</div>
-                        </div>
-                    </div>
+                <div class="bg-[#FDFBF7] rounded-[2.5rem] overflow-hidden border border-[#1A3628]/5 shadow-sm group">
+                    <div class="h-64 overflow-hidden"><img src="assets/fotoaffogatokoffiezaak.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                    <div class="p-8"><h3 class="font-serif text-3xl text-[#1A3628]">Horeca Luxe</h3></div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-[#FDFBF7] overflow-hidden border-y border-[#1A3628]/5">
+        <div class="flex animate-horizontal-loop whitespace-nowrap items-center">
+            <img src="assets/angus.png" class="h-16 mx-12 object-contain" alt="Angus">
+            <img src="assets/boltahus.jpg.png" class="h-16 mx-12 object-contain" alt="Boltahus">
+            <img src="assets/dedeelen.png" class="h-16 mx-12 object-contain" alt="De Deelen">
+            <img src="assets/feintsje.png" class="h-16 mx-12 object-contain" alt="Feintsje">
+            <img src="assets/katlijk.jpg" class="h-16 mx-12 object-contain" alt="Katlijk">
+            <img src="assets/plattelandswinkeltje.png" class="h-16 mx-12 object-contain" alt="Plattelandswinkeltje">
+            <img src="assets/ypko.jpg" class="h-16 mx-12 object-contain" alt="Ypko">
+            <img src="assets/angus.png" class="h-16 mx-12 object-contain" alt="Angus">
+            <img src="assets/boltahus.jpg.png" class="h-16 mx-12 object-contain" alt="Boltahus">
+            <img src="assets/dedeelen.png" class="h-16 mx-12 object-contain" alt="De Deelen">
+            <img src="assets/feintsje.png" class="h-16 mx-12 object-contain" alt="Feintsje">
+            <img src="assets/katlijk.jpg" class="h-16 mx-12 object-contain" alt="Katlijk">
+            <img src="assets/plattelandswinkeltje.png" class="h-16 mx-12 object-contain" alt="Plattelandswinkeltje">
+            <img src="assets/ypko.jpg" class="h-16 mx-12 object-contain" alt="Ypko">
         </div>
     </section>
 
     <section id="wetenschap" class="py-32 bg-white relative z-10">
         <div class="max-w-5xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="font-serif text-6xl md:text-7xl text-[#1A3628] mb-6 leading-tight">De Wetenschap achter <br><span class="italic font-light">Performance Food</span></h2>
-                <p class="text-xl text-[#1A3628]/70 font-light max-w-3xl mx-auto">Schapenmelk staat bekend om de superieure opneembaarheid. Onze formule is verrijkt met essentiële elementen voor fysiek herstel.</p>
+                <h2 class="font-serif text-7xl md:text-8xl text-[#1A3628] mb-6 leading-tight">Performance Food</h2>
+                <p class="text-xl text-[#1A3628]/70 font-light max-w-2xl mx-auto italic">De wetenschap achter een superieure opneembaarheid.</p>
             </div>
-            <div class="bg-[#FDFBF7] rounded-[3rem] p-10 md:p-16 border border-[#1A3628]/10 shadow-sm relative overflow-hidden">
-                <table class="w-full nutrition-table text-lg md:text-xl">
-                    <tr><td class="font-bold uppercase tracking-[0.2em] text-[10px]">Basis</td><td class="font-medium">Eiwitten (Lacaune schaap)</td><td class="text-right italic font-serif">9.8g</td></tr>
-                    <tr><td class="font-bold uppercase tracking-[0.2em] text-[10px]">Boost</td><td class="font-medium">Creatine Monohydraat</td><td class="text-right italic font-serif">3.0g</td></tr>
-                    <tr><td class="font-bold uppercase tracking-[0.2em] text-[10px]">Herstel</td><td class="font-medium">Magnesium (Citraat)</td><td class="text-right italic font-serif">150mg</td></tr>
-                    <tr><td class="font-bold uppercase tracking-[0.2em] text-[10px]">Zorg</td><td class="font-medium">Vitamines D, K & E</td><td class="text-right italic text-xs uppercase">Optimaal</td></tr>
+            <div class="bg-[#1A3628] text-white rounded-[4rem] p-12 md:p-20 shadow-[0_40px_80px_-15px_rgba(26,54,40,0.3)] relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-12 opacity-10">
+                    <span class="iconify text-9xl" data-icon="lucide:microscope"></span>
+                </div>
+                <table class="w-full nutrition-table text-xl md:text-2xl border-none">
+                    <tr class="border-white/20"><td class="font-bold uppercase tracking-[0.2em] text-xs opacity-60">Basis</td><td class="font-medium">Eiwitten (Lacaune schaap)</td><td class="text-right italic font-serif">9.8g</td></tr>
+                    <tr class="border-white/20"><td class="font-bold uppercase tracking-[0.2em] text-xs opacity-60">Boost</td><td class="font-medium">Creatine Monohydraat</td><td class="text-right italic font-serif">3.0g</td></tr>
+                    <tr class="border-white/20"><td class="font-bold uppercase tracking-[0.2em] text-xs opacity-60">Herstel</td><td class="font-medium">Magnesium (Citraat)</td><td class="text-right italic font-serif">150mg</td></tr>
+                    <tr class="border-none"><td class="font-bold uppercase tracking-[0.2em] text-xs opacity-60">Zorg</td><td class="font-medium">Vitamines D, K & E</td><td class="text-right italic text-sm uppercase font-bold tracking-tighter">Optimaal</td></tr>
                 </table>
             </div>
         </div>
@@ -164,21 +159,30 @@
     <footer id="contact" class="bg-white pt-40 pb-12 border-t border-[#1A3628]/5 relative z-10 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 relative">
             
-            <div class="absolute top-0 right-0 hidden lg:block transition-transform hover:scale-105 z-20 animate-float-recept">
-                <div class="w-56 h-56 rounded-full overflow-hidden border-8 border-white shadow-2xl">
+            <div class="absolute top-0 right-[10%] hidden lg:block transition-transform hover:scale-105 z-20 animate-float-recept">
+                <div class="w-48 h-48 rounded-full overflow-hidden border-8 border-white shadow-2xl">
                     <img src="assets/Gemini_Generated_Image_qd7xs7qd7xs7qd7x.jpg" class="w-full h-full object-cover">
                 </div>
-                <div class="mt-[-30px] bg-[#FDFBF7] p-5 rounded-2xl shadow-lg border border-[#1A3628]/5 text-center receipt-jagged pt-8 mx-auto w-48">
-                    <p class="font-serif text-xl text-[#1A3628]">Ultieme Affogato</p>
+                <div class="mt-[-25px] bg-[#FDFBF7] p-5 rounded-2xl shadow-lg border border-[#1A3628]/5 text-center receipt-jagged pt-8 mx-auto w-44">
+                    <p class="font-serif text-lg text-[#1A3628]">Ultieme Affogato</p>
                 </div>
             </div>
 
-            <div class="absolute bottom-40 left-0 hidden lg:block transition-transform hover:scale-105 z-20 animate-float-recept" style="animation-delay: -3s;">
-                <div class="w-56 h-56 rounded-full overflow-hidden border-8 border-white shadow-2xl">
+            <div class="absolute top-[20%] left-0 hidden lg:block transition-transform hover:scale-105 z-20 animate-float-recept" style="animation-delay: -3s;">
+                <div class="w-44 h-44 rounded-full overflow-hidden border-8 border-white shadow-2xl">
                     <img src="assets/Gemini_Generated_Image_ahhuowahhuowahhu.jpg" class="w-full h-full object-cover">
                 </div>
-                <div class="mt-[-30px] bg-[#FDFBF7] p-5 rounded-2xl shadow-lg border border-[#1A3628]/5 text-center receipt-jagged pt-8 mx-auto w-48">
-                    <p class="font-serif text-xl text-[#1A3628]">Apple Crumble</p>
+                <div class="mt-[-25px] bg-[#FDFBF7] p-4 rounded-2xl shadow-lg border border-[#1A3628]/5 text-center receipt-jagged pt-6 mx-auto w-40">
+                    <p class="font-serif text-md text-[#1A3628]">Apple Crumble</p>
+                </div>
+            </div>
+
+            <div class="absolute bottom-40 right-4 hidden lg:block transition-transform hover:scale-105 z-20 animate-float-recept" style="animation-delay: -1.5s;">
+                <div class="w-40 h-40 rounded-full overflow-hidden border-8 border-white shadow-2xl">
+                    <img src="assets/Gemini_Generated_Image_2abxbe2abxbe2abx.jpg" class="w-full h-full object-cover">
+                </div>
+                <div class="mt-[-25px] bg-[#FDFBF7] p-4 rounded-2xl shadow-lg border border-[#1A3628]/5 text-center receipt-jagged pt-6 mx-auto w-36">
+                    <p class="font-serif text-md text-[#1A3628]">Los ijsje</p>
                 </div>
             </div>
 
@@ -192,17 +196,8 @@
                 </div>
             </div>
 
-            <div class="pt-24 pb-16 border-t border-[#1A3628]/5">
-                <span class="text-[10px] font-bold uppercase tracking-[0.5em] text-[#1A3628]/30 block text-center mb-12">Ondersteund door</span>
-                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24">
-                    <img src="assets/Flag_of_Europe.svg" alt="EU" class="h-8 w-auto partner-logo">
-                    <img src="assets/Logo_Versnellingsagenda_los_smal_transparant.png.webp" alt="VA" class="h-8 w-auto partner-logo">
-                    <img src="assets/SNN_logo_naamvoluit_CMYK_png.png" alt="SNN" class="h-10 w-auto partner-logo">
-                </div>
-            </div>
-
-            <div class="pt-12 flex flex-col items-center">
-                <img src="assets/skyld-logo.png" alt="SKYLD" class="h-12 w-auto logo-color-filter mb-4">
+            <div class="pt-24 pb-12 border-t border-[#1A3628]/5 flex flex-col items-center">
+                <img src="assets/skyld-logo.png" alt="SKYLD" class="h-10 w-auto logo-color-filter mb-4">
                 <p class="text-[#1A3628]/60 font-medium italic mb-2">Luxwoude, Friesland</p>
                 <p class="text-[9px] text-[#1A3628]/30 uppercase tracking-[0.4em]">© 2026 SKYLD PERFORMANCE FOOD</p>
             </div>
